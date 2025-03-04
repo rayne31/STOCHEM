@@ -2,7 +2,7 @@ C#######################################################################
       PROGRAM STOCHEM
 C----------------------------------------------------------------------
 C-
-C-   This is version S7_3_dlt   as of 28-Jun-98
+C-   This is version S7_3_dlt   as of 28-Jun-98 
 C-
 C----------------------------------------------------------------------
 C-   PRESENT-DAY EMISSIONS AND INITIAL CONCENTRATIONS

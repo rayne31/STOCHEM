@@ -1,0 +1,15 @@
+New base for new PCs:
+
+- redefine original subroutine 'RANDOM' as 'RANDOMNUM' for compatability with new libraries
+- includes DMS chem
+- includes ISOP recycling 
+
+Base_test:
+- all STOCHEM inputs moved to a central EMDIR, relevant path names changed
+- some files previous in DATDIR (LAND_BIG.DAT, OZ_BIG.DAT, LS100BIG.DAT, LS56BIG.DAT,
+stat10_soa.dat) changed to EMDIR, now DATDIR calls the inputs in the new scenrion files 
+(i.e. chem10_soa, flux10_OH, BINFILE)
+- running to confirm everything works fine (12/02/25), everything fine (14/02/2025)
+
+NEW BASE:
+- 

@@ -1,0 +1,127 @@
+      REAL DLAT,DLONG,DLATM,DLONGM
+C Model grid and Met grid array sizes
+      INTEGER  NLONG,NLAT,MNLAT,NLEV,NMETLONG,NMETLAT,NMETLEV
+      PARAMETER(NLONG=72,NLAT=37,MNLAT=36,NLEV=9,
+     &  NMETLEV=11,NMETLONG=288,NMETLAT=217)
+C Model grid and Met grid lengths (degrees)
+      PARAMETER(DLAT=180./MNLAT,DLONG=360./NLONG,
+     &  DLATM=180./(NMETLAT-1),DLONGM=360./NMETLONG)
+C Number of cells, no. of species, no. of met fields per day
+      INTEGER NCELL,NC,NHR,NDJ,NR
+      PARAMETER(NCELL=50048,NC=241,NHR=4,NDJ=108,NR=591)
+C Number in a  block for CRAY vectorisation - keep this even for workstations
+      INTEGER NBLOCK
+      PARAMETER (NBLOCK=128)
+C Number of chemicals and fluxes to store 3D statistics for.
+      INTEGER NUMCHEM,NUMFLUX,NUM3DFLUX
+      PARAMETER(NUMCHEM=241,NUMFLUX=804,NUM3DFLUX=50)
+C Number of stations to output concentrations for 
+      INTEGER NUMSTAT
+      PARAMETER(NUMSTAT=40)
+c   nfollow is the number of cells to get diagnostics for, you set it
+      INTEGER NFOLLOW
+      PARAMETER(nfollow=1)
+C Change directory names here for VAX or HP specific filenames
+      CHARACTER*29 DATDIR,OUTDIR
+      CHARACTER*25 EMDIR
+      CHARACTER*27 METDIR
+      DATA
+     &   DATDIR/'/user/work/rh15078/Base_test/'/,
+     &   METDIR/'/user/work/rh15078/metdata/'/,
+     &   EMDIR/'/user/work/rh15078/EMDIR/'/,
+     &   OUTDIR/'/user/work/rh15078/Base_test/'/
+
+C Chemical names
+      CHARACTER*12 CNAMES(NC)
+      INTEGER III
+      DATA (CNAMES(III), III=1,52) /
+     & 'O1D         ','O           ','OH          ', 'NO2         ',
+     & 'NO3         ', 'O3          ','N2O5        ','NO          ',
+     & 'HO2         ','H2          ', 'CO          ', 'H2O2        ',
+     & 'HONO        ', 'HNO3        ', 'HO2NO2      ', 'SO2         ',
+     & 'SO3         ', 'HSO3        ', 'NAER        ', 'SA          ',
+     & 'CH4         ', 'CH3O2       ', 'C2H6        ', 'C2H5O2      ',
+     & 'C3H8        ', 'IC3H7O2     ', 'RN10O2      ', 'NC4H10      ',
+     & 'RN13O2      ', 'C2H4        ', 'HOCH2CH2O2  ', 'C3H6        ',
+     & 'RN9O2       ', 'TBUT2ENE    ', 'RN12O2      ', 'NRN6O2      ',
+     & 'NRN9O2      ', 'NRN12O2     ', 'HCHO        ', 'HCOOH       ',
+     & 'CH3CO2H     ', 'CH3CHO      ', 'C5H8        ', 'RU14O2      ',
+     & 'NRU14O2     ', 'UCARB10     ', 'APINENE     ', 'RTN28O2     ',
+     & 'NRTN28O2    ', 'RTN26O2     ', 'TNCARB26    ', 'RCOOH25    '/
+
+      DATA (CNAMES(III), III=53,101) /
+     & 'BPINENE     ', 'RTX28O2     ', 'NRTX28O2    ', 'RTX24O2     ',
+     & 'TXCARB24    ', 'TXCARB22    ', 'C2H2        ', 'CARB3       ',
+     & 'BENZENE     ', 'RA13O2      ', 'AROH14      ', 'TOLUENE     ',
+     & 'RA16O2      ', 'AROH17      ', 'OXYL        ', 'RA19AO2     ',
+     & 'RA19CO2     ', 'CH3CO3      ', 'C2H5CHO     ', 'C2H5CO3     ',
+     & 'CH3COCH3    ', 'RN8O2       ', 'RN11O2      ', 'CH3OH       ',
+     & 'C2H5OH      ', 'NPROPOL     ', 'IPROPOL     ', 'CH3CL       ',
+     & 'CH2CL2      ', 'CHCL3       ', 'CH3CCL3     ', 'TCE         ',
+     & 'TRICLETH    ', 'CDICLETH    ', 'TDICLETH    ', 'CARB11A     ',
+     & 'RN16O2      ', 'RN15AO2     ', 'RN19O2      ', 'RN18AO2     ',
+     & 'RN13AO2     ', 'RN16AO2     ', 'RN15O2      ', 'UDCARB8     ',
+     & 'UDCARB11    ', 'CARB6       ', 'UDCARB14    ', 'CARB9       ',
+     & 'MEK        '/
+
+      DATA (CNAMES(III), III=102,152) /
+     & 'HOCH2CHO    ', 'RN18O2      ', 'CARB13      ', 'CARB16      ',
+     & 'HOCH2CO3    ', 'RN14O2      ', 'RN17O2      ', 'UCARB12     ',
+     & 'RU12O2      ', 'CARB7       ', 'RU10O2      ', 'NUCARB12    ',
+     & 'NRU12O2     ', 'NOA         ', 'RTN25O2     ', 'RTN24O2     ',
+     & 'RTN23O2     ', 'RTN14O2     ', 'TNCARB10    ', 'RTN10O2     ',
+     & 'RTX22O2     ', 'CH3NO3      ', 'C2H5NO3     ', 'RN10NO3     ',
+     & 'IC3H7NO3    ', 'RN13NO3     ', 'RN16NO3     ', 'RN19NO3     ',
+     & 'HOC2H4NO3   ', 'RN9NO3      ', 'RN12NO3     ', 'RN15NO3     ',
+     & 'RN18NO3     ', 'RU14NO3     ', 'RA13NO3     ', 'RA16NO3     ',
+     & 'RA19NO3     ', 'RTN28NO3    ', 'RTN25NO3    ', 'RTX28NO3    ',
+     & 'RTX24NO3    ', 'RTX22NO3    ', 'CH3OOH      ', 'C2H5OOH     ',
+     & 'RN10OOH     ', 'IC3H7OOH    ', 'RN13OOH     ', 'RN16OOH     ',
+     & 'RN19OOH     ', 'RA13OOH     ', 'RA16OOH    '/
+
+      DATA (CNAMES(III), III=153,241) /
+     & 'RA19OOH     ', 'HOC2H4OOH   ', 'RN9OOH      ', 'RN12OOH     ',
+     & 'RN15OOH     ', 'RN18OOH     ', 'CH3CO3H     ', 'C2H5CO3H    ',
+     & 'HOCH2CO3H   ', 'RN8OOH      ', 'RN11OOH     ', 'RN14OOH     ',
+     & 'RN17OOH     ', 'RU14OOH     ', 'RU12OOH     ', 'RU10OOH     ',
+     & 'NRN6OOH     ', 'NRN9OOH     ', 'NRN12OOH    ', 'NRU14OOH    ',
+     & 'NRU12OOH    ', 'RTN28OOH    ', 'NRTN28OOH   ', 'RTN26OOH    ',
+     & 'RTN25OOH    ', 'RTN24OOH    ', 'RTN23OOH    ', 'RTN14OOH    ',
+     & 'RTN10OOH    ', 'RTX28OOH    ', 'RTX24OOH    ', 'RTX22OOH    ',
+     & 'NRTX28OOH   ', 'CARB14      ', 'CARB17      ', 'CARB10      ',
+     & 'CARB12      ', 'CARB15      ', 'CCARB12     ', 'ANHY        ',
+     & 'TNCARB15    ', 'RAROH14     ', 'ARNOH14     ', 'RAROH17     ',
+     & 'ARNOH17     ', 'PAN         ', 'PPN         ', 'PHAN        ',
+     & 'RU12PAN     ', 'MPAN        ', 'RTN26PAN    ', 'P2604       ',
+     & 'P4608       ', 'P2631       ', 'P2635       ', 'P4610       ',
+     & 'P2605       ', 'P2630       ', 'P2629       ', 'P2632       ',
+     & 'P2637       ', 'P3612       ', 'P3613       ', 'P3442       ',
+     & 'CH3O2NO2    ', 'EMPOA       ', 'P2007       ', 'DMS         ',
+     & 'DMSO        ', 'CH3SO       ', 'CH3SO2      ', 'CH3SO3      ',
+     & 'MSIA        ', 'MSA         ', 'CH3BR       ', 'NH3         ',
+     & 'AMMSUL    ', 'HPUCARB12', 'DHPR12O2', 'DHPR12OOH',
+     & 'DHPCARB9', 'HUCARB9', 'RU12NO3', 'RU10NO3 ',
+     & 'IEPOX', 'DHCARB9','RU10AO2', 'MACO3',
+     &'HMML'/
+
+C   ETA LEVELS  (W IS SPECIFIED ON ETA1, U,V,T ON ETA2, MODEL USES ETA3)
+      REAL ETA1(NMETLEV), ETA2(NMETLEV),ETA3(NLEV+1),
+     &  A2(NMETLEV)
+      DATA ETA1 / 0.994, 0.956, 0.905, 0.835, 0.750,
+     &            0.650, 0.550, 0.385, 0.325, 0.225, 0.075 /
+      DATA ETA2 / 0.997, 0.975,0.9304,0.8698,0.7922,
+     &           0.6996,0.5995,0.5045,0.2998,0.0992 ,0.0148/ !, 0.0046 /
+      DATA ETA3 / 1.000, 0.900, 0.800, 0.700, 0.600, 0.500,
+     &            0.400, 0.300, 0.200, 0.100 /
+      DATA A2 /0.,0.,0.,0.,4.725,24.08,58.09,94.699,146.88,88.617,14.79/
+C Determines whether Cray specific code is used.
+      LOGICAL CRAY
+      DATA CRAY /.FALSE./
+      LOGICAL CLIM
+      DATA CLIM /.FALSE./
+
+      REAL NA,RGC,G,MAIR,PI,RADIUS
+      PARAMETER(NA=6.022E23,RGC=8.314,G=9.81,MAIR=28.97,PI=3.14159265E0,
+     &  RADIUS=6370.949)
+      REAL MH2O
+      PARAMETER(MH2O=18)

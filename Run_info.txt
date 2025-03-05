@@ -12,9 +12,13 @@ stat10_soa.dat) changed to EMDIR, now DATDIR calls the inputs in the new scenrio
 - running to confirm everything works fine (12/02/25), everything fine (14/02/2025)
 
 NEW BASE:
+Emissions - 
 - Veg emissions taken from MEGAN 2012 (https://gmd.copernicus.org/articles/5/1471/2012/gmd-5-1471-2012.pdf)
 - Veg emissions previously in STOCHEM with no update in MEGAN have be assumed to be artefacts of old
 updates and removed
 - Only chemicals with speciated emissions given in MEGAN have been updated (those included in VOC categories have been ignored)
 - EXCEPTION: monoterpene total emissions are summed and split 2:1, alpha:beta-pinene 
 - With these updates to vegetation emissons, our model contains ~94% of biogenic emissions predicted by MEGAN
+Kinetics - 
+- JPL 19-5 (2019) used for updates of H2 photolysis AND kinetic data for VOC + OH 
+- updated values found in ../Update_docs

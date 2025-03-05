@@ -8035,19 +8035,19 @@ C     Reaction (8) O1D = O
          RC(JB,8) = 1.80D-11*N2(JB)*EXP(107/TC(JB))        
 C
 C     Reaction (9) NO + O3 = NO2                                                      
-         RC(JB,9) = 1.40D-12*EXP(-1310/TC(JB))         
+         RC(JB,9) = 3.0D-12*EXP(-1500/TC(JB))         
 C
 C     Reaction (10) NO2 + O3 = NO3                                                     
-         RC(JB,10) = 1.40D-13*EXP(-2470/TC(JB))         
+         RC(JB,10) = 1.20D-13*EXP(-2450/TC(JB))         
 C
 C     Reaction (11) NO + NO = NO2 + NO2                                                
          RC(JB,11) = 3.30D-39*EXP(530/TC(JB))*O2(JB)        
 C
 C     Reaction (12) NO + NO3 = NO2 + NO2                                               
-         RC(JB,12) = 1.80D-11*EXP(110/TC(JB))           
+         RC(JB,12) = 1.70D-11*EXP(125/TC(JB))           
 C
 C     Reaction (13) NO2 + NO3 = NO + NO2                                               
-         RC(JB,13) = 4.50D-14*EXP(-1260/TC(JB))         
+         RC(JB,13) = 4.350D-14*EXP(-1335/TC(JB))         
 C
 C     Reaction (14) NO2 + NO3 = N2O5                                                   
          RC(JB,14) = KMT03                            
@@ -8062,7 +8062,7 @@ C     Reaction (17) OH + O3 = HO2
          RC(JB,17) = 1.70D-12*EXP(-940/TC(JB))          
 C
 C     Reaction (18) OH + H2 = HO2                                                      
-         RC(JB,18) = 7.70D-12*EXP(-2100/TC(JB))         
+         RC(JB,18) = 2.80D-12*EXP(-1800/TC(JB))         
 C
 C     Reaction (19) OH + CO = HO2                                                      
          RC(JB,19) = 1.30D-13*KMT05                   
@@ -8071,7 +8071,7 @@ C     Reaction (20) OH + H2O2 = HO2
          RC(JB,20) = 2.90D-12*EXP(-160/TC(JB))          
 C
 C     Reaction (21) HO2 + O3 = OH                                                      
-         RC(JB,21) = 2.03D-16*((TC(JB)/300)**4.57)*EXP(693/TC(JB))  
+         RC(JB,21) = 1D-14*EXP(-490/TC(JB))  
 C
 C     Reaction (22) OH + HO2 =                                                         
          RC(JB,22) = 4.80D-11*EXP(250/TC(JB))           
@@ -8095,7 +8095,7 @@ C     Reaction (28) OH + NO3 = HO2 + NO2
          RC(JB,28) = 2.00D-11                         
 C
 C     Reaction (29) HO2 + NO = OH + NO2                                                
-         RC(JB,29) = 3.60D-12*EXP(270/TC(JB))           
+         RC(JB,29) = 3.44D-12*EXP(260/TC(JB))           
 C
 C     Reaction (30) HO2 + NO2 = HO2NO2                                                 
          RC(JB,30) = KMT09                            
@@ -8107,10 +8107,10 @@ C     Reaction (32) OH + HO2NO2 = NO2
          RC(JB,32) = 1.90D-12*EXP(270/TC(JB))           
 C
 C     Reaction (33) HO2 + NO3 = OH + NO2                                               
-         RC(JB,33) = 4.00D-12                         
+         RC(JB,33) = 3.5D-12                         
 C
 C     Reaction (34) OH + HONO = NO2                                                    
-         RC(JB,34) = 2.50D-12*EXP(-260/TC(JB))          
+         RC(JB,34) = 3.0D-12*EXP(250/TC(JB))          
 C
 C     Reaction (35) OH + HNO3 = NO3                                                    
          RC(JB,35) = KMT11                            
@@ -8134,19 +8134,19 @@ C     Reaction (41) SO3 = SA
          RC(JB,41) = 1.20D-15*H2O(JB)                     
 C
 C     Reaction (42) OH + CH4 = CH3O2                                                   
-         RC(JB,42) = 9.65D-20*TC(JB)**2.58*EXP(-1082/TC(JB)) 
+         RC(JB,42) = 2.45D-12*EXP(-1775/TC(JB)) 
 C
 C     Reaction (43) OH + C2H6 = C2H5O2                                                 
-         RC(JB,43) = 1.52D-17*TC(JB)**2*EXP(-498/TC(JB)) 
+         RC(JB,43) = 7.66D-12*EXP(-1020/TC(JB)) 
 C
 C     Reaction (44) OH + C3H8 = IC3H7O2                                                
-         RC(JB,44) = 1.55D-17*TC(JB)**2*EXP(-61/TC(JB))*0.736  
+         RC(JB,44) = 9.19D-12*EXP(-630/TC(JB))*0.736  
 C
 C     Reaction (45) OH + C3H8 = RN10O2                                                 
-         RC(JB,45) = 1.55D-17*TC(JB)**2*EXP(-61/TC(JB))*0.264  
+         RC(JB,45) = 9.19D-12*EXP(-630/TC(JB))*0.264 
 C
 C     Reaction (46) OH + NC4H10 = RN13O2                                               
-         RC(JB,46) = 1.69D-17*TC(JB)**2*EXP(145/TC(JB))  
+         RC(JB,46) = 1.02D-11*EXP(-430/TC(JB))  
 C
 C     Reaction (47) OH + C2H4 = HOCH2CH2O2                                             
          RC(JB,47) = KMT15                        
@@ -8167,16 +8167,16 @@ C     Reaction (52) NO3 + TBUT2ENE = NRN12O2
          RC(JB,52) = 3.90D-13                     
 C
 C     Reaction (53) O3 + C2H4 = HCHO + CO + HO2 + OH                                   
-         RC(JB,53) = 9.14D-15*EXP(-2580/TC(JB))*0.13  
+         RC(JB,53) = 1.2E-14*EXP(-2630/TC(JB))*0.13  
 C
 C     Reaction (54) O3 + C2H4 = HCHO + HCOOH                                           
-         RC(JB,54) = 9.14D-15*EXP(-2580/TC(JB))*0.87  
+         RC(JB,54) = 1.2E-14*EXP(-2630/TC(JB))*0.87  
 C
 C     Reaction (55) O3 + C3H6 = HCHO + CO + CH3O2 + OH                                 
-         RC(JB,55) = 5.51D-15*EXP(-1878/TC(JB))*0.36  
+         RC(JB,55) = 6.5D-15*EXP(-1900/TC(JB))*0.36  
 C
 C     Reaction (56) O3 + C3H6 = HCHO + CH3CO2H                                         
-         RC(JB,56) = 5.51D-15*EXP(-1878/TC(JB))*0.64  
+         RC(JB,56) = 6.5D-15*EXP(-1900/TC(JB))*0.64  
 C
 C     Reaction (57) O3 + TBUT2ENE = CH3CHO + CO + CH3O2 + OH                           
          RC(JB,57) = 6.64D-15*EXP(-1059/TC(JB))*0.69 
@@ -8185,16 +8185,16 @@ C     Reaction (58) O3 + TBUT2ENE = CH3CHO + CH3CO2H
          RC(JB,58) = 6.64D-15*EXP(-1059/TC(JB))*0.31 
 C
 C     Reaction (59) OH + C5H8 = RU14O2                                                 
-         RC(JB,59) = 2.70D-11*EXP(390/TC(JB))       
+         RC(JB,59) = 3.0D-11*EXP(360/TC(JB))       
 C
 C     Reaction (60) NO3 + C5H8 = NRU14O2                                               
-         RC(JB,60) = 3.15D-12*EXP(-450/TC(JB))      
+         RC(JB,60) = 3.5D-12*EXP(-450/TC(JB))      
 C
 C     Reaction (61) O3 + C5H8 = UCARB10 + CO + HO2 + OH                                
-         RC(JB,61) = 1.03D-14*EXP(-1995/TC(JB))*0.125 
+         RC(JB,61) = 1.1D-14*EXP(-2000/TC(JB))*0.125 
 C
 C     Reaction (62) O3 + C5H8 = UCARB10 + HCOOH                                        
-         RC(JB,62) = 1.03D-14*EXP(-1995/TC(JB))*0.175 
+         RC(JB,62) = 1.1D-14*EXP(-2000/TC(JB))*0.175 
 C
 C     Reaction (63) APINENE + OH = RTN28O2                                             
          RC(JB,63) = 1.20D-11*EXP(444/TC(JB))           
@@ -8254,13 +8254,13 @@ C     Reaction (81) OXYL + OH = RA19CO2
          RC(JB,81) = 1.36D-11*0.30 
 C
 C     Reaction (82) OH + HCHO = HO2 + CO                                               
-         RC(JB,82) = 1.20D-14*TC(JB)*EXP(287/TC(JB))  
+         RC(JB,82) = 5.50D-12*EXP(125/TC(JB))  
 C
 C     Reaction (83) OH + CH3CHO = CH3CO3                                               
-         RC(JB,83) = 5.55D-12*EXP(311/TC(JB))             
+         RC(JB,83) = 4.63D-12*EXP(350/TC(JB))             
 C
 C     Reaction (84) OH + C2H5CHO = C2H5CO3                                             
-         RC(JB,84) = 1.96D-11                                
+         RC(JB,84) = 4.9D-12*EXP(405/TC(JB))                               
 C
 C     Reaction (85) NO3 + HCHO = HO2 + CO + HNO3                                       
          RC(JB,85) = 5.80D-16                  
@@ -8278,58 +8278,58 @@ C     Reaction (89) MEK + OH = RN11O2
          RC(JB,89) = 3.24D-18*TC(JB)**2*EXP(414/TC(JB))
 C
 C     Reaction (90) OH + CH3OH = HO2 + HCHO                                            
-         RC(JB,90) = 6.01D-18*TC(JB)**2*EXP(170/TC(JB))  
+         RC(JB,90) = 2.9D-12*EXP(-345/TC(JB))  
 C
 C     Reaction (91) OH + C2H5OH = CH3CHO + HO2                                         
-         RC(JB,91) = 6.18D-18*TC(JB)**2*EXP(532/TC(JB))*0.887 
+         RC(JB,91) = 3.35D-12*0.887 
 C
 C     Reaction (92) OH + C2H5OH = HOCH2CH2O2                                           
-         RC(JB,92) = 6.18D-18*TC(JB)**2*EXP(532/TC(JB))*0.113 
+         RC(JB,92) = 3.35D-12*0.113 
 C
 C     Reaction (93) NPROPOL + OH = C2H5CHO + HO2                                       
-         RC(JB,93) = 5.53D-12*0.49 
+         RC(JB,93) = 4.4D-12*exp(70/TC(JB))*0.49 
 C
 C     Reaction (94) NPROPOL + OH = RN9O2                                               
-         RC(JB,94) = 5.53D-12*0.51 
+         RC(JB,94) = 4.4D-12*exp(70/TC(JB))*0.51 
 C
 C     Reaction (95) OH + IPROPOL = CH3COCH3 + HO2                                      
-         RC(JB,95) = 4.06D-18*TC(JB)**2*EXP(788/TC(JB))*0.86 
+         RC(JB,95) = 2.1D-12*EXP(270/TC(JB))*0.86 
 C
 C     Reaction (96) OH + IPROPOL = RN9O2                                               
-         RC(JB,96) = 4.06D-18*TC(JB)**2*EXP(788/TC(JB))*0.14 
+         RC(JB,96) = 2.1D-12*EXP(270/TC(JB))*0.14 
 C
 C     Reaction (97) HCOOH + OH = HO2                                                   
          RC(JB,97) = 4.50D-13 
 C
 C     Reaction (98) CH3CO2H + OH = CH3O2                                               
-         RC(JB,98) = 8.00D-13 
+         RC(JB,98) = 3.8E-12*EXP(200/TC(JB)) 
 C
 C     Reaction (99) OH + CH3CL = CH3O2                                                 
-         RC(JB,99) = 7.33D-18*TC(JB)**2*EXP(-809/TC(JB))   
+         RC(JB,99) = 1.96D-12*EXP(-1200/TC(JB))   
 C
 C     Reaction (100) OH + CH2CL2 = CH3O2                                                
-         RC(JB,100) = 6.14D-18*TC(JB)**2*EXP(-389/TC(JB))   
+         RC(JB,100) = 1.92D-12*EXP(-880/TC(JB))   
 C
 C     Reaction (101) OH + CHCL3 = CH3O2                                                 
-         RC(JB,101) = 1.80D-18*TC(JB)**2*EXP(-129/TC(JB))   
+         RC(JB,101) = 2.20D-12*EXP(-920/TC(JB))   
 C
 C     Reaction (102) OH + CH3CCL3 = C2H5O2                                              
-         RC(JB,102) = 2.25D-18*TC(JB)**2*EXP(-910/TC(JB))   
+         RC(JB,102) = 1.64D-12*EXP(-1520/TC(JB))   
 C
 C     Reaction (103) OH + TCE = HOCH2CH2O2                                              
-         RC(JB,103) = 9.64D-12*EXP(-1209/TC(JB))         
+         RC(JB,103) = 4.70D-12*EXP(-990/TC(JB))         
 C
 C     Reaction (104) OH + TRICLETH = HOCH2CH2O2                                         
-         RC(JB,104) = 5.63D-13*EXP(427/TC(JB))            
+         RC(JB,104) = 8.0D-13*EXP(300/TC(JB))            
 C
 C     Reaction (105) OH + CDICLETH = HOCH2CH2O2                                         
-         RC(JB,105) = 1.94D-12*EXP(90/TC(JB))            
+         RC(JB,105) = 2.04D-12*EXP(70/TC(JB))            
 C
 C     Reaction (106) OH + TDICLETH = HOCH2CH2O2                                         
-         RC(JB,106) = 1.01D-12*EXP(250/TC(JB))           
+         RC(JB,106) = 1.06D-12*EXP(230/TC(JB))           
 C
 C     Reaction (107) CH3O2 + NO = HCHO + HO2 + NO2                                      
-         RC(JB,107) = 3.00D-12*EXP(280/TC(JB))*0.999 
+         RC(JB,107) = 2.80D-12*EXP(300/TC(JB))*0.999 
 C
 C     Reaction (108) C2H5O2 + NO = CH3CHO + HO2 + NO2                                   
          RC(JB,108) = 2.60D-12*EXP(365/TC(JB))*0.991 
@@ -8740,7 +8740,7 @@ C     Reaction (243) NRTX28O2 + NO3 = TXCARB24 + HCHO + NO2 + NO2
          RC(JB,243) = KRO2NO3            
 C
 C     Reaction (244) CH3O2 + HO2 = CH3OOH                                               
-         RC(JB,244) = 4.10D-13*EXP(790/TC(JB))  
+         RC(JB,244) = 4.10D-13*EXP(750/TC(JB))  
 C
 C     Reaction (245) C2H5O2 + HO2 = C2H5OOH                                             
          RC(JB,245) = 7.50D-13*EXP(700/TC(JB))  
@@ -8881,22 +8881,22 @@ C     Reaction (290) NRTX28O2 + HO2 = NRTX28OOH
          RC(JB,290) = KRO2HO2*0.914       
 C
 C     Reaction (291) CH3O2 = HCHO + HO2                                                 
-         RC(JB,291) = 1.82D-13*EXP(416/TC(JB))*0.33*RO2(JB)  
+         RC(JB,291) = 9.5D-14*EXP(390/TC(JB))*0.33*RO2(JB)  
 C
 C     Reaction (292) CH3O2 = HCHO                                                       
-         RC(JB,292) = 1.82D-13*EXP(416/TC(JB))*0.335*RO2(JB) 
+         RC(JB,292) = 9.5D-14*EXP(390/TC(JB))*0.335*RO2(JB) 
 C
 C     Reaction (293) CH3O2 = CH3OH                                                      
-         RC(JB,293) = 1.82D-13*EXP(416/TC(JB))*0.335*RO2(JB) 
+         RC(JB,293) = 9.5D-14*EXP(390/TC(JB))*0.335*RO2(JB) 
 C
 C     Reaction (294) C2H5O2 = CH3CHO + HO2                                              
-         RC(JB,294) = 3.10D-13*0.6*RO2(JB)             
+         RC(JB,294) = 6.8D-14*0.6*RO2(JB)             
 C
 C     Reaction (295) C2H5O2 = CH3CHO                                                    
-         RC(JB,295) = 3.10D-13*0.2*RO2(JB)             
+         RC(JB,295) = 6.8D-14*0.2*RO2(JB)             
 C
 C     Reaction (296) C2H5O2 = C2H5OH                                                    
-         RC(JB,296) = 3.10D-13*0.2*RO2(JB)             
+         RC(JB,296) = 6.8D-14*0.2*RO2(JB)             
 C
 C     Reaction (297) RN10O2 = C2H5CHO + HO2                                             
          RC(JB,297) = 6.00D-13*0.6*RO2(JB)             
@@ -9277,10 +9277,10 @@ C     Reaction (422) NO3 + ARNOH17 = CARB16 + NO2 + HNO3
          RC(JB,422) = 3.13D-13               
 C
 C     Reaction (423) OH + CH3OOH = CH3O2                                                
-         RC(JB,423) = 1.90D-11*EXP(190/TC(JB))       
+         RC(JB,423) = 3.80D-12*EXP(200/TC(JB))       
 C
 C     Reaction (424) OH + CH3OOH = HCHO + OH                                            
-         RC(JB,424) = 1.00D-11*EXP(190/TC(JB))       
+         RC(JB,424) = 3.80D-12*EXP(200/TC(JB))       
 C
 C     Reaction (425) OH + C2H5OOH = CH3CHO + OH                                         
          RC(JB,425) = 1.36D-11               
@@ -9547,164 +9547,225 @@ C     Reaction (512) P2007 = RU12OOH
          RC(JB,512) = KOUT2007
 C
 C     Reaction (513) : OH + DMS  = CH3SO +HCHO
-         RC(JB,513) = 9.6E-12*EXP(-234/TC(JB))
+         RC(JB,513) = 1.2E-11*EXP(-280/TC(JB))
 C
 C     Reaction (514) : OH + DMS = DMSO + HO2
-        RC(JB,514)=(1.7D-42*EXP(7810/TC(JB))*O2(JB))/
+         RC(JB,514)=(1.7D-42*EXP(7810/TC(JB))*O2(JB))/
      &    (1.+(5.5D-31*EXP(7460/TC(JB))*O2(JB)))
 C
 C     Reaction (515) : NO3 + DMS = CH3SO + HCHO + HNO3
-        RC(JB,515) = 1.9E-13*EXP(520/TC(JB))
+         RC(JB,515) = 1.9E-13*EXP(530/TC(JB))
 C
 C     Reaction (516)  : OH + DMSO =  MSIA + CH3O2
-        RC(JB,516) = 5.8E-11
+         RC(JB,516) = 6.1D-12*exp(400/TC(JB))
 C
 C     Reaction (517)  : CH3SO + O3 = CH3SO2
-        RC(JB,517) = 6.0E-13
+         RC(JB,517) = 4.0E-13
 C
 C     Reaction (518) : CH3SO + NO2 = CH3SO2 + NO
-        RC(JB,518) = 8.0E-12
+         RC(JB,518) = 1.2E-11
 C
 C     Reaction (519) : OH + MSIA = CH3SO2
-        RC(JB,519) = 1.6E-11
+         RC(JB,519) = 9.0E-11
 C
 C     Reaction (520) : CH3SO2 + O3 = CH3SO3
-        RC(JB,520) = 3.0E-13
+         RC(JB,520) = 3.0E-13
 C
 C     Reaction (521) : CH3SO2 + NO2 = CH3SO3 + NO
-        RC(JB,521) = 4.0E-12
+         RC(JB,521) = 2.2E-11
 C
 C     Reaction (522) : CH3SO2 + O2 = CH3O2 + SO2
-        RC(JB,522) = 5.0E+13*EXP(-(1.0+(8656/TC(JB))))
+         RC(JB,522) = 5.0E+13*EXP(-(1.0+(8656/TC(JB))))
 C
 C     Reaction (523) : CH3SO3 + HO2 = MSA
-        RC(JB,523) = 5.0E-11
+         RC(JB,523) = 5.0E-11
 C
 C     Reaction (524) : CH3SO3 + O2 = CH3O2 + SA
-        RC(JB,524) = 5.0E+13*EXP(-(1.0+(11071/TC(JB))))
+         RC(JB,524) = 5.0E+13*EXP(-(1.0+(11071/TC(JB))))
 C
 C     Reaction (525) : CH3SO3 + HCHO = MSA + CO + HO2
-        RC(JB,525) = 1.6E-15
+         RC(JB,525) = 1.6E-15
+C
 C     Reaction (526): OH + CH3BR = 
-        RC(JB,526) = 1.7E-12*EXP(-1215/TC(JB))
+         RC(JB,526) = 1.42E-12*EXP(-1150/TC(JB))
+C
 C     Reaction (530) : O3 + C5H8 = UCARB10 +HCHO + H2O2
-       RC(JB,530) = 1.03D-14*EXP(-1995/TC(JB))*0.385
+         RC(JB,530) = 1.1D-14*EXP(-2000/TC(JB))*0.385
+C
 C     Reaction (531) : O3 + C5H8 = CH3CO3 +HCHO + HCHO + CO + OH
-       RC(JB,531) = 1.03D-14*EXP(-1995/TC(JB))*0.125
+         RC(JB,531) = 1.1D-14*EXP(-2000/TC(JB))*0.125
+C
 C     Reaction (532) : O3 + C5H8 = UCARB10 +CO
-       RC(JB,532) = 1.03D-14*EXP(-1995/TC(JB))*0.095
+         RC(JB,532) = 1.03D-14*EXP(-1995/TC(JB))*0.095
+C
 C     Reaction (533) : O3 + C5H8 = HCHO + CH3O2+HCHO+CO+HO2
-       RC(JB,533) = 1.03D-14*EXP(-1995/TC(JB))*0.095
+         RC(JB,533) = 1.03D-14*EXP(-1995/TC(JB))*0.095
+C
 C     Reaction (534) : RU14O2 = HPUCARB12 + HO2
-       RC(JB,534) = K16ISOM*0.5
+         RC(JB,534) = K16ISOM*0.5
+C
 C     Reaction (535) : RU14O2 = DHPR12O2
-       RC(JB,535) = K16ISOM*0.5
+         RC(JB,535) = K16ISOM*0.5
+C
 C     Reaction (536) : RU14O2 = UCARB10 + HCHO + OH
-       RC(JB,536) = 1.24D+11*EXP(-9750/TC(JB))
+         RC(JB,536) = 1.24D+11*EXP(-9750/TC(JB))
+C
 C     Reaction (537) : DHPR12O2 +NO= CARB3+RN8OOH + OH+ NO2
-       RC(JB,537) = KRO2NO
+         RC(JB,537) = KRO2NO
+C
 C     Reaction (538) : DHPR12O2 +NO3= CARB3+RN8OOH + OH+ NO2
-       RC(JB,538) = KRO2NO3
+         RC(JB,538) = KRO2NO3
+C
 C     Reaction (539) : DHPR12O2 +HO2= DHPR12OOH
-       RC(JB,539) = KRO2HO2*0.706
+         RC(JB,539) = KRO2HO2*0.706
+C
 C     Reaction (540) : DHPR12O2 = CARB3 + RN8OOH + OH
-       RC(JB,540) = 7.60D-13*RO2(JB)
+         RC(JB,540) = 7.60D-13*RO2(JB)
+C
 C     Reaction (541) : DHPR12O2 = DHPCARB9+CO+OH
-       RC(JB,541) = K14ISOM1
+         RC(JB,541) = K14ISOM1
+C
 C     Reaction (542) : OH+HPUCARB12= HUCARB9+CO+OH
-       RC(JB,542) = 5.20D-11
+         RC(JB,542) = 5.20D-11
+C
 C     Reaction (543) : O3+HPUCARB12= CARB3+CARB6+OH+OH
-       RC(JB,543) = 2.40D-17
+         RC(JB,543) = 2.40D-17
+C
 C     Reaction (544) : NO3+HPUCARB12= HUCARB9+CO+OH+HNO3
-       RC(JB,544) = KNO3AL*4.25
+         RC(JB,544) = KNO3AL*4.25
+C
 C     Reaction (545) : OH+DHPCARB9= RN8OOH+CO+OH
-       RC(JB,545) = 3.64D-11
+         RC(JB,545) = 3.64D-11
+C
 C     Reaction (546) : OH+DHPR12OOH= DHPCARB9+CO+OH
-       RC(JB,546) = 5.64D-11			 
+         RC(JB,546) = 5.64D-11			
+C
 C     Reaction (547) : OH+HUCARB9= CARB6+CO+HO2
-       RC(JB,547) = 5.78D-11
+         RC(JB,547) = 5.78D-11
+C
 C     Reaction (548) : OH + RU14NO3 = RU10NO3 + HCHO + HO2
-       RC(JB,548) = 3.00D-11*0.48
+         RC(JB,548) = 3.00D-11*0.48
+C
 C     Reaction (549) : OH + RU14NO3 = RU12NO3 + HO2
-       RC(JB,549) = 3.00D-11*0.18
+         RC(JB,549) = 3.00D-11*0.18
+C
 C     Reaction (550) : OH + RU12NO3 = CARB7 + CARB3+NO2
-       RC(JB,550) = 2.50D-12
+         RC(JB,550) = 2.50D-12
+C
 C     Reaction (551) : OH + RU10NO3 = CARB7 + CO+NO2
-       RC(JB,551) = 5.26D-13
+         RC(JB,551) = 5.26D-13
+C
 C     Reaction (552) : OH + RU14OOH = IEPOX + OH
-       RC(JB,552) = 7.14D-11*0.85
+         RC(JB,552) = 7.14D-11*0.85
+C
 C     Reaction (553) : OH + RU14OOH = RU14O2
-       RC(JB,553) = 7.14D-11*0.06
+         RC(JB,553) = 7.14D-11*0.06
+C
 C     Reaction (554) : OH + IEPOX = RU12O2
-       RC(JB,554) = 1.16D-11
+         RC(JB,554) = 1.16D-11
+C
 C     Reaction (555) : RU12O2 + NO = CARB7+HOCH2CO3+NO2
-       RC(JB,555) = KRO2NO*0.170
+         RC(JB,555) = KRO2NO*0.170
+C
 C     Reaction (556) : RU12O2 + NO = RU12NO3
-       RC(JB,556) = KRO2NO*0.035
+         RC(JB,556) = KRO2NO*0.035
+C
 C     Reaction (557) : RU12O2 + NO3 = CARB7+HOCH2CO3+NO2
-       RC(JB,557) = KRO2NO*0.176
+         RC(JB,557) = KRO2NO*0.176
+C
 C     Reaction (558) : RU12O2 = CARB7+HOCH2CO3
-       RC(JB,558) = 4.20D-13*RO2(JB)*0.176
+         RC(JB,558) = 4.20D-13*RO2(JB)*0.176
+C
 C     Reaction (559) : RU12O2 = DHCARB9+CO+OH
-       RC(JB,559) = K14ISOM1*0.008
+         RC(JB,559) = K14ISOM1*0.008
+C
 C     Reaction (560) : DHCARB9 +OH = CARB6+HO2
-       RC(JB,560) = 3.42D-11
+         RC(JB,560) = 3.42D-11
+C
 C     Reaction (561) : UCARB10 +OH = RU10AO2
-       RC(JB,561) = 3.84D-12*EXP(533/TC(JB))*0.157
+         RC(JB,561) = 3.84D-12*EXP(533/TC(JB))*0.157
+C
 C     Reaction (562) : UCARB10 +OH = MACO3
-       RC(JB,562) = 3.84D-12*EXP(533/TC(JB))*0.150
+         RC(JB,562) = 3.84D-12*EXP(533/TC(JB))*0.150
+C
 C     Reaction (563) : RU10AO2 +NO = CARB7+CO+HO2+NO2
-       RC(JB,563) = KRO2NO*0.987
+         RC(JB,563) = KRO2NO*0.987
+C
 C     Reaction (564) : RU10AO2 +NO = RU10NO3
-       RC(JB,564) = KRO2NO*0.013
+         RC(JB,564) = KRO2NO*0.013
+C
 C     Reaction (565) : RU10AO2 +NO3 = CARB7+CO+HO2+NO2
-       RC(JB,565) = KRO2NO3
+         RC(JB,565) = KRO2NO3
+C
 C     Reaction (566) : RU10AO2 +HO2 = RU10OOH
-       RC(JB,566) = KRO2HO2*0.625
+         RC(JB,566) = KRO2HO2*0.625
+C
 C     Reaction (567) : RU10AO2 = CARB7+CO+HO2
-       RC(JB,567) = 3.60D-13*RO2(JB)
+         RC(JB,567) = 3.60D-13*RO2(JB)
+C
 C     Reaction (568) : RU10AO2 = CARB7+CO+OH
-       RC(JB,568) = K14ISOM1
+         RC(JB,568) = K14ISOM1
+C
 C     Reaction (569) : MACO3 +NO = CH3O2+CO+HCHO+HO2+NO2
-       RC(JB,569) = KAPNO*0.65
+         RC(JB,569) = KAPNO*0.65
+C
 C     Reaction (570) : MACO3 +NO = CH3CO3+HCHO+HO2+NO2
-       RC(JB,570) = KAPNO*0.35
+         RC(JB,570) = KAPNO*0.35
+C
 C     Reaction (571) : MACO3 +NO2 = MPAN
-       RC(JB,571) = KFPAN
+         RC(JB,571) = KFPAN
+C
 C     Reaction (572) : MACO3 +NO3 = CH3O2+CO+HCHO+HO2+NO2
-       RC(JB,572) = KRO2NO3*1.74*0.65
+         RC(JB,572) = KRO2NO3*1.74*0.65
+C
 C     Reaction (573) : MACO3 +NO3 = CH3CO3+HCHO+HO2+NO2
-       RC(JB,573) = KRO2NO3*1.74*0.35
+         RC(JB,573) = KRO2NO3*1.74*0.35
+C
 C     Reaction (574) : MACO3 +HO2 = RU10OOH
-       RC(JB,574) = KAPHO2*0.56
+         RC(JB,574) = KAPHO2*0.56
+C
 C     Reaction (575) : MACO3 +HO2 = CH3O2+CO+HCHO+OH
-       RC(JB,575) = KAPHO2*0.44
+         RC(JB,575) = KAPHO2*0.44
+C
 C     Reaction (576) : MACO3 = CH3O2+CO+HCHO+HO2
-       RC(JB,576) = 1.00D-11*RO2(JB)*0.65
+         RC(JB,576) = 1.00D-11*RO2(JB)*0.65
+C
 C     Reaction (577) : MACO3 = CH3CO3+HCHO+HO2
-       RC(JB,577) = 1.00D-11*RO2(JB)*0.35
+         RC(JB,577) = 1.00D-11*RO2(JB)*0.35
+C
 C     Reaction (578) : OH+MPAN = HMML+NO3
-       RC(JB,578) = 2.90D-11*0.78
+         RC(JB,578) = 2.90D-11*0.78
+C
 C     Reaction (579) : OH+HMML = CARB6+OH
-       RC(JB,579) = 4.33D-12*0.7
+         RC(JB,579) = 4.33D-12*0.7
+C
 C     Reaction (580) : OH+HMML = HCOOH+CH3CO3
-       RC(JB,580) = 4.33D-12*0.3
+         RC(JB,580) = 4.33D-12*0.3
+C
 C     Reaction (581) : NRU12O2+NO=NOA+CARB3+HO2+NO2
-       RC(JB,581) = KRO2NO*0.5
+         RC(JB,581) = KRO2NO*0.5
+C
 C     Reaction (582) : NRU12O2+NO3=NOA+CARB3+HO2+NO2
-       RC(JB,582) = KRO2NO*0.5
+         RC(JB,582) = KRO2NO*0.5
+C
 C     Reaction (583) NRU12O2 = NOA + CARB3 + HO2                                           
          RC(JB,583) = 9.60D-13*RO2(JB)*0.5   
+C
 C     Reaction (584) CH3CO3+HO2 = CH3O2+OH                                           
          RC(JB,584) = KAPHO2*0.44
+C
 C     Reaction (585) HOCH2CO3+HO2 = HCHO+HO2+OH                                           
          RC(JB,585) = KAPHO2*0.44
+C
 C     Reaction (586) O3+UCARB12=CARB3+HOCH2CHO+CH3CO3+OH                                           
          RC(JB,586) = 2.40D-17*0.25
+C
 C     Reaction (587) OH+CARB3=CO+OH                                          
          RC(JB,587) = 3.10D-12*EXP(340/TC(JB))*0.2
+C
 C     Reaction (588) C2H5CO3+HO2 = C2H5O2+OH                                           
          RC(JB,588) = KAPHO2*0.44
+C
 C     Reaction (589) RTN26O2+HO2 = RTN25O2+OH                                           
          RC(JB,589) = KAPHO2*0.44
 C       -----------------------

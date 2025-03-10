@@ -22,14 +22,14 @@ c   nfollow is the number of cells to get diagnostics for, you set it
       INTEGER NFOLLOW
       PARAMETER(nfollow=1)
 C Change directory names here for VAX or HP specific filenames
-      CHARACTER*32 DATDIR,OUTDIR
+      CHARACTER*24 DATDIR,OUTDIR
       CHARACTER*25 EMDIR
       CHARACTER*27 METDIR
       DATA
-     &   DATDIR/'/user/work/rh15078/STOCHEM/Base/'/,
+     &   DATDIR/'/user/work/rh15078/Base/'/,
      &   METDIR/'/user/work/rh15078/metdata/'/,
      &   EMDIR/'/user/work/rh15078/EMDIR/'/,
-     &   OUTDIR/'/user/work/rh15078/STOCHEM/Base/'/
+     &   OUTDIR/'/user/work/rh15078/Base/'/
 
 C Chemical names
       CHARACTER*12 CNAMES(NC)

@@ -20,5 +20,8 @@ updates and removed
 - EXCEPTION: monoterpene total emissions are summed and split 2:1, alpha:beta-pinene 
 - With these updates to vegetation emissons, our model contains ~94% of biogenic emissions predicted by MEGAN
 Kinetics - 
-- JPL 19-5 (2019) used for updates of H2 photolysis AND kinetic data for VOC + OH 
+- JPL 19-5 (2019- https://jpldataeval.jpl.nasa.gov/pdf/NASA-JPL%20Evaluation%2019-5.pdf) used for updates of HCHO, AONE and ACET 
+photolysis AND kinetic data for VOC + OH 
 - updated values found in ../Update_docs
+- photolysis values interpolated to each wavelength listed in LAMBDA DATA expression (rather than previously used method of 
+treating lambda values as midoints of 'bins' and averaging)

@@ -8,13 +8,13 @@ C Model grid and Met grid lengths (degrees)
      &  DLATM=180./(NMETLAT-1),DLONGM=360./NMETLONG)
 C Number of cells, no. of species, no. of met fields per day
       INTEGER NCELL,NC,NHR,NDJ,NR
-      PARAMETER(NCELL=50048,NC=241,NHR=4,NDJ=108,NR=591)
+      PARAMETER(NCELL=50048,NC=241,NHR=4,NDJ=109,NR=591)
 C Number in a  block for CRAY vectorisation - keep this even for workstations
       INTEGER NBLOCK
       PARAMETER (NBLOCK=128)
 C Number of chemicals and fluxes to store 3D statistics for.
       INTEGER NUMCHEM,NUMFLUX,NUM3DFLUX
-      PARAMETER(NUMCHEM=241,NUMFLUX=804,NUM3DFLUX=50)
+      PARAMETER(NUMCHEM=241,NUMFLUX=805,NUM3DFLUX=50)
 C Number of stations to output concentrations for 
       INTEGER NUMSTAT
       PARAMETER(NUMSTAT=40)
@@ -22,14 +22,14 @@ c   nfollow is the number of cells to get diagnostics for, you set it
       INTEGER NFOLLOW
       PARAMETER(nfollow=1)
 C Change directory names here for VAX or HP specific filenames
-      CHARACTER*29 DATDIR,OUTDIR
+      CHARACTER*24 DATDIR,OUTDIR
       CHARACTER*25 EMDIR
       CHARACTER*27 METDIR
       DATA
-     &   DATDIR/'/user/work/rh15078/Base_test/'/,
+     &   DATDIR/'/user/work/rh15078/Base/'/,
      &   METDIR/'/user/work/rh15078/metdata/'/,
      &   EMDIR/'/user/work/rh15078/EMDIR/'/,
-     &   OUTDIR/'/user/work/rh15078/Base_test/'/
+     &   OUTDIR/'/user/work/rh15078/Base/'/
 
 C Chemical names
       CHARACTER*12 CNAMES(NC)

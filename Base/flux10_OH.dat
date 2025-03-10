@@ -1,0 +1,805 @@
+NRTX28OOH->TXCARB24+HCHO+NO2+OH         696  1
+RTX22OOH->CH3COCH3+RN13O2+OH            695  1
+RTX28OOH->TXCARB24+HCHO+HO2+OH          693  1
+RTN14OOH->TNCARB10+HCHO+HO2+OH          691  1
+RTN24OOH->RTN23O2+OH                    689  1
+RTN26OOH->RTN25O2+OH                    687  1
+RTN28OOH->TNCARB26+HO2+OH               685  1
+RA16OOH->CARB3+UDCARB11+HO2+OH          683  1
+NRN12OOH->CH3CHO+CH3CHO+NO2+OH          681  1
+NRN6OOH->HCHO+HCHO+NO2+OH               679  1
+RN15OOH->C2H5CHO+CH3CHO+HO2+OH          677  1
+RN9OOH->CH3CHO+HCHO+HO2+OH              675  1
+NRU12OOH->NOA+CARB3+HO2+OH              673  1
+RU10OOH->CH3CO3+HOCH2CHO+OH             671  1
+UCARB12->CARB7+CO+CO+HO2+HO2            669  1
+RN17OOH->RN16O2+OH                      667  1
+RN11OOH->RN10O2+OH                      665  1
+HOCH2CO3H->HCHO+HO2+OH                  663  1
+CH3CO3H->CH3O2+OH                       661  1
+RN16OOH->RN15AO2+OH                     659  1
+RN13OOH->CH3CHO+C2H5O2+OH               657  1
+RN10OOH->C2H5CHO+HO2+OH                 655  1
+CH3OOH->HCHO+HO2+OH                     653  1
+HONO->OH+NO                             607  1
+HPUCARB12->HUCARB9+CO+OH+OH             697  1
+HPUCARB12->CARB7+CO+CO+HO2+OH           698  1
+HUCARB9->CARB6+CO+HO2+OH                703  1
+DHPCARB9->RN8OOH+CO+HO2+OH              699  1
+DHPCARB9->CARB6+HCHO+OH+OH              700  1
+DHPR12OOH->DHPCARB9+CO+OH+HO2           701  1
+DHPR12OOH->CARB3+RN8OOH+OH+OH           702  1
+RU14NO3->UCARB10+HCHO+HO2+NO2           704  1
+RU10NO3->CH3CO3+HOCH2CHO+NO2            705  1
+DHCARB9->CARB7+CO+HO2+HO2               706  1
+CARB3->CO+CO+H2                         707  1
+CARB3->HCHO+CO                          708  1
+CH3CHO->CH4+CO                          709  1
+RTX24OOH->TXCARB22+HO2+OH               694  1
+RTN10OOH->RN8O2+CO+OH                   692  1
+RTN23OOH->CH3COCH3+RTN14O2+OH           690  1
+RTN25OOH->RTN24O2+OH                    688  1
+NRTN28OOH->TNCARB26+NO2+OH              686  1
+RA19OOH->CARB6+UDCARB11+HO2+OH          684  1
+RA13OOH->CARB3+UDCARB8+HO2+OH           682  1
+NRN9OOH->CH3CHO+HCHO+NO2+OH             680  1
+RN18OOH->C2H5CHO+C2H5CHO+HO2+OH         678  1
+RN12OOH->CH3CHO+CH3CHO+HO2+OH           676  1
+HOC2H4OOH->HCHO+HCHO+HO2+OH             674  1
+NRU14OOH->NUCARB12+HO2+OH               672  1
+RU12OOH->CARB6+HOCH2CHO+HO2+OH          670  1
+UCARB12->RU12O2+HO2                     668  1
+RN14OOH->RN13O2+OH                      666  1
+RN8OOH->CH3CO3+HCHO+OH                  664  1
+C2H5CO3H->C2H5O2+OH                     662  1
+RN19OOH->RN18AO2+OH                     660  1
+RN13OOH->CARB11A+HO2+OH                 658  1
+IC3H7OOH->CH3COCH3+HO2+OH               656  1
+C2H5OOH->CH3CHO+HO2+OH                  654  1
+HNO3->OH+NO2                            608  1
+H2O2->OH+OH                             603  1
+O3+UCARB10->HCHO+CH3CO3+CO+OH           362  1
+O3+UCARB12->CARB6+HO2+CO+OH             374  1
+BPINENE+O3->RTX24O2+OH                   70  1
+O3+C5H8->UCARB10+CO+HO2+OH               61  1
+APINENE+O3->OH+RTN26O2                   65  1
+O3+C3H6->HCHO+CO+CH3O2+OH                55  1
+O3+TBUT2ENE->CH3CHO+CO+CH3O2+OH          57  1
+HO2+NO3->OH+NO2                          33  1
+O3+C2H4->HCHO+CO+HO2+OH                  53  1
+HO2+O3->OH                               21  1
+HO2+NO->OH+NO2                           29  1
+O1D->OH+OH                               16  1
+O3->O1D                                 601  1
+O3->O                                   602  1
+NO2->NO+O                               604  1
+NO3->NO                                 605  1
+NO3->NO2+O                              606  1
+HCHO->CO+HO2+HO2                        609  1
+HCHO->H2+CO                             610  1
+CH3CHO->CH3O2+HO2+CO                    611  1
+C2H5CHO->C2H5O2+CO+HO2                  612  1
+CH3COCH3->CH3CO3+CH3O2                  613  1
+MEK->CH3CO3+C2H5O2                      614  1
+CARB14->CH3CO3+RN10O2                   615  1
+CARB17->RN8O2+RN10O2                    616  1
+CARB11A->CH3CO3+C2H5O2                  617  1
+CARB7->CH3CO3+HCHO+HO2                  618  1
+CARB10->CH3CO3+CH3CHO+HO2               619  1
+CARB13->RN8O2+CH3CHO+HO2                620  1
+CARB16->RN8O2+C2H5CHO+HO2               621  1
+HOCH2CHO->HCHO+CO+HO2+HO2               622  1
+UCARB10->CH3CO3+HCHO+HO2                623  1
+CARB3->CO+CO+HO2+HO2                    624  1
+CARB6->CH3CO3+CO+HO2                    625  1
+CARB9->CH3CO3+CH3CO3                    626  1
+CARB12->CH3CO3+RN8O2                    627  1
+CARB15->RN8O2+RN8O2                     628  1
+UCARB12->CH3CO3+HOCH2CHO+CO+HO2         629  1
+NUCARB12->HUCARB9+CO+OH+NO2             630  1
+NUCARB12->CARB7+CO+CO+HO2+NO2           631  1
+RU12NO3->CARB6+HOCH2CHO+HO2+NO2         632  1
+UDCARB8->C2H5O2+HO2                     633  1
+UDCARB8->ANHY+HO2+HO2                   634  1
+UDCARB11->RN10O2+HO2                    635  1
+UDCARB11->ANHY+HO2+CH3O2                636  1
+UDCARB14->RN13O2+HO2                    637  1
+UDCARB14->ANHY+HO2+C2H5O2               638  1
+TNCARB26->RTN26O2+HO2                   639  1
+TNCARB10->CH3CO3+CH3CO3+CO              640  1
+CH3NO3->HCHO+HO2+NO2                    641  1
+C2H5NO3->CH3CHO+HO2+NO2                 642  1
+RN10NO3->C2H5CHO+HO2+NO2                643  1
+IC3H7NO3->CH3COCH3+HO2+NO2              644  1
+RN13NO3->CH3CHO+C2H5O2+NO2              645  1
+RN13NO3->CARB11A+HO2+NO2                646  1
+RN16NO3->RN15O2+NO2                     647  1
+RN19NO3->RN18O2+NO2                     648  1
+RA13NO3->CARB3+UDCARB8+HO2+NO2          649  1
+RA16NO3->CARB3+UDCARB11+HO2+NO2         650  1
+RA19NO3->CARB6+UDCARB11+HO2+NO2         651  1
+RTX24NO3->TXCARB22+HO2+NO2              652  1
+O->O3                                     1  0
+O->O3                                     2  0
+O+O3->O2+O2                               3  0
+O+NO->NO2                                 4  0
+O+NO2->NO                                 5  0
+O+NO2->NO3                                6  0
+O1D->O                                    7  0
+O1D->O                                    8  0
+NO+O3->NO2                                9  0
+NO2+O3->NO3                              10  0
+NO+NO->NO2+NO2                           11  0
+NO+NO3->NO2+NO2                          12  0
+NO2+NO3->NO+NO2                          13  0
+NO2+NO3->N2O5                            14  0
+N2O5->NO2+NO3                            15  0
+OH+O3->HO2                               17  0
+OH+H2->HO2                               18  0
+OH+CO->HO2                               19  0
+OH+H2O2->HO2                             20  0
+OH+HO2->                                 22  0
+HO2+HO2->H2O2                            23  0
+HO2+HO2->H2O2                            24  0
+OH+NO->HONO                              25  0
+NO2->HONO                                26  0
+OH+NO2->HNO3                             27  0
+OH+NO3->HO2+NO2                          28  0
+HO2+NO2->HO2NO2                          30  0
+HO2NO2->HO2+NO2                          31  0
+OH+HO2NO2->NO2                           32  0
+OH+HONO->NO2                             34  0
+OH+HNO3->NO3                             35  0
+O+SO2->SO3                               36  0
+OH+SO2->HSO3                             37  0
+HSO3->HO2+SO3                            38  0
+HNO3->NA                                 39  0
+N2O5->NA+NA                              40  0
+SO3->SA                                  41  0
+OH+CH4->CH3O2                            42  0
+OH+C2H6->C2H5O2                          43  0
+OH+C3H8->IC3H7O2                         44  0
+OH+C3H8->RN10O2                          45  0
+OH+NC4H10->RN13O2                        46  0
+OH+C2H4->HOCH2CH2O2                      47  0
+OH+C3H6->RN9O2                           48  0
+OH+TBUT2ENE->RN12O2                      49  0
+NO3+C2H4->NRN6O2                         50  0
+NO3+C3H6->NRN9O2                         51  0
+NO3+TBUT2ENE->NRN12O2                    52  0
+O3+C2H4->HCHO+HCOOH                      54  0
+O3+C3H6->HCHO+CH3CO2H                    56  0
+O3+TBUT2ENE->CH3CHO+CH3CO2H              58  0
+OH+C5H8->RU14O2                          59  0
+NO3+C5H8->NRU14O2                        60  0
+O3+C5H8->UCARB10+HCOOH                   62  0
+APINENE+OH->RTN28O2                      63  0
+APINENE+NO3->NRTN28O2                    64  0
+APINENE+O3->TNCARB26+H2O2                66  0
+APINENE+O3->RCOOH25                      67  0
+BPINENE+OH->RTX28O2                      68  0
+BPINENE+NO3->NRTX28O2                    69  0
+BPINENE+O3->HCHO+TXCARB24+H2O2           71  0
+BPINENE+O3->HCHO+TXCARB22                72  0
+BPINENE+O3->TXCARB24+CO                  73  0
+C2H2+OH->HCOOH+CO+HO2                    74  0
+C2H2+OH->CARB3+OH                        75  0
+BENZENE+OH->RA13O2                       76  0
+BENZENE+OH->AROH14+HO2                   77  0
+TOLUENE+OH->RA16O2                       78  0
+TOLUENE+OH->AROH17+HO2                   79  0
+OXYL+OH->RA19AO2                         80  0
+OXYL+OH->RA19CO2                         81  0
+OH+HCHO->HO2+CO                          82  0
+OH+CH3CHO->CH3CO3                        83  0
+OH+C2H5CHO->C2H5CO3                      84  0
+NO3+HCHO->HO2+CO+HNO3                    85  0
+NO3+CH3CHO->CH3CO3+HNO3                  86  0
+NO3+C2H5CHO->C2H5CO3+HNO3                87  0
+OH+CH3COCH3->RN8O2                       88  0
+MEK+OH->RN11O2                           89  0
+OH+CH3OH->HO2+HCHO                       90  0
+OH+C2H5OH->CH3CHO+HO2                    91  0
+OH+C2H5OH->HOCH2CH2O2                    92  0
+NPROPOL+OH->C2H5CHO+HO2                  93  0
+NPROPOL+OH->RN9O2                        94  0
+OH+IPROPOL->CH3COCH3+HO2                 95  0
+OH+IPROPOL->RN9O2                        96  0
+HCOOH+OH->HO2                            97  0
+CH3CO2H+OH->CH3O2                        98  0
+OH+CH3CL->CH3O2                          99  0
+OH+CH2CL2->CH3O2                        100  0
+OH+CHCL3->CH3O2                         101  0
+OH+CH3CCL3->C2H5O2                      102  0
+OH+TCE->HOCH2CH2O2                      103  0
+OH+TRICLETH->HOCH2CH2O2                 104  0
+OH+CDICLETH->HOCH2CH2O2                 105  0
+OH+TDICLETH->HOCH2CH2O2                 106  0
+CH3O2+NO->HCHO+HO2+NO2                  107  0
+C2H5O2+NO->CH3CHO+HO2+NO2               108  0
+RN10O2+NO->C2H5CHO+HO2+NO2              109  0
+IC3H7O2+NO->CH3COCH3+HO2+NO2            110  0
+RN13O2+NO->CH3CHO+C2H5O2+NO2            111  0
+RN13O2+NO->CARB11A+HO2+NO2              112  0
+RN16O2+NO->RN15AO2+NO2                  113  0
+RN19O2+NO->RN18AO2+NO2                  114  0
+RN13AO2+NO->RN12O2+NO2                  115  0
+RN16AO2+NO->RN15O2+NO2                  116  0
+RA13O2+NO->CARB3+UDCARB8+HO2+NO2        117  0
+RA16O2+NO->CARB3+UDCARB11+HO2+NO2       118  0
+RA16O2+NO->CARB6+UDCARB8+HO2+NO2        119  0
+RA19AO2+NO->CARB3+UDCARB14+HO2+NO2      120  0
+RA19CO2+NO->CARB9+UDCARB8+HO2+NO2       121  0
+HOCH2CH2O2+NO->HCHO+HCHO+HO2+NO2        122  0
+HOCH2CH2O2+NO->HOCH2CHO+HO2+NO2         123  0
+RN9O2+NO->CH3CHO+HCHO+HO2+NO2           124  0
+RN12O2+NO->CH3CHO+CH3CHO+HO2+NO2        125  0
+RN15O2+NO->C2H5CHO+CH3CHO+HO2+NO2       126  0
+RN18O2+NO->C2H5CHO+C2H5CHO+HO2+NO2      127  0
+RN15AO2+NO->CARB13+HO2+NO2              128  0
+RN18AO2+NO->CARB16+HO2+NO2              129  0
+CH3CO3+NO->CH3O2+NO2                    130  0
+C2H5CO3+NO->C2H5O2+NO2                  131  0
+HOCH2CO3+NO->HO2+HCHO+NO2               132  0
+RN8O2+NO->CH3CO3+HCHO+NO2               133  0
+RN11O2+NO->CH3CO3+CH3CHO+NO2            134  0
+RN14O2+NO->C2H5CO3+CH3CHO+NO2           135  0
+RN17O2+NO->RN16AO2+NO2                  136  0
+RU14O2+NO->UCARB12+HO2+NO2              137  0
+RU14O2+NO->UCARB10+HCHO+HO2+NO2         138  0
+RU12O2+NO->CARB6+HOCH2CHO+NO2+HO2       139  0
+RU12O2+NO->CARB7+CARB3+HO2+NO2          140  0
+RU10O2+NO->CH3CO3+HOCH2CHO+NO2          141  0
+RU10O2+NO->CARB6+HCHO+HO2+NO2           142  0
+RU10O2+NO->RU10NO3                      143  0
+NRN6O2+NO->HCHO+HCHO+NO2+NO2            144  0
+NRN9O2+NO->CH3CHO+HCHO+NO2+NO2          145  0
+NRN12O2+NO->CH3CHO+CH3CHO+NO2+NO2       146  0
+NRU14O2+NO->NUCARB12+HO2+NO2            147  0
+NRU12O2+NO->NOA+CO+HO2+NO2              148  0
+RTN28O2+NO->TNCARB26+HO2+NO2            149  0
+RTN28O2+NO->CH3COCH3+RN19O2+NO2         150  0
+NRTN28O2+NO->TNCARB26+NO2+NO2           151  0
+RTN26O2+NO->RTN25O2+NO2                 152  0
+RTN25O2+NO->RTN24O2+NO2                 153  0
+RTN24O2+NO->RTN23O2+NO2                 154  0
+RTN23O2+NO->CH3COCH3+RTN14O2+NO2        155  0
+RTN14O2+NO->HCHO+TNCARB10+HO2+NO2       156  0
+RTN10O2+NO->RN8O2+CO+NO2                157  0
+RTX28O2+NO->TXCARB24+HCHO+HO2+NO2       158  0
+RTX28O2+NO->CH3COCH3+RN19O2+NO2         159  0
+NRTX28O2+NO->TXCARB24+HCHO+NO2+NO2      160  0
+RTX24O2+NO->TXCARB22+HO2+NO2            161  0
+RTX24O2+NO->CH3COCH3+RN13AO2+HCHO+NO2   162  0
+RTX22O2+NO->CH3COCH3+RN13O2+NO2         163  0
+CH3O2+NO2->CH3O2NO2                     164  0
+CH3O2NO2->CH3O2+NO2                     165  0
+CH3O2+NO->CH3NO3                        166  0
+C2H5O2+NO->C2H5NO3                      167  0
+RN10O2+NO->RN10NO3                      168  0
+IC3H7O2+NO->IC3H7NO3                    169  0
+RN13O2+NO->RN13NO3                      170  0
+RN16O2+NO->RN16NO3                      171  0
+RN19O2+NO->RN19NO3                      172  0
+HOCH2CH2O2+NO->HOC2H4NO3                173  0
+RN9O2+NO->RN9NO3                        174  0
+RN12O2+NO->RN12NO3                      175  0
+RN15O2+NO->RN15NO3                      176  0
+RN18O2+NO->RN18NO3                      177  0
+RN15AO2+NO->RN15NO3                     178  0
+RN18AO2+NO->RN18NO3                     179  0
+RU14O2+NO->RU14NO3                      180  0
+RA13O2+NO->RA13NO3                      181  0
+RA16O2+NO->RA16NO3                      182  0
+RA19AO2+NO->RA19NO3                     183  0
+RA19CO2+NO->RA19NO3                     184  0
+RTN28O2+NO->RTN28NO3                    185  0
+RTN25O2+NO->RTN25NO3                    186  0
+RTX28O2+NO->RTX28NO3                    187  0
+RTX24O2+NO->RTX24NO3                    188  0
+RTX22O2+NO->RTX22NO3                    189  0
+CH3O2+NO3->HCHO+HO2+NO2                 190  0
+C2H5O2+NO3->CH3CHO+HO2+NO2              191  0
+RN10O2+NO3->C2H5CHO+HO2+NO2             192  0
+IC3H7O2+NO3->CH3COCH3+HO2+NO2           193  0
+RN13O2+NO3->CH3CHO+C2H5O2+NO2           194  0
+RN13O2+NO3->CARB11A+HO2+NO2             195  0
+RN16O2+NO3->RN15AO2+NO2                 196  0
+RN19O2+NO3->RN18AO2+NO2                 197  0
+RN13AO2+NO3->RN12O2+NO2                 198  0
+RN16AO2+NO3->RN15O2+NO2                 199  0
+RA13O2+NO3->CARB3+UDCARB8+HO2+NO2       200  0
+RA16O2+NO3->CARB3+UDCARB11+HO2+NO2      201  0
+RA16O2+NO3->CARB6+UDCARB8+HO2+NO2       202  0
+RA19AO2+NO3->CARB3+UDCARB14+HO2+NO2     203  0
+RA19CO2+NO3->CARB9+UDCARB8+HO2+NO2      204  0
+HOCH2CH2O2+NO3->HCHO+HCHO+HO2+NO2       205  0
+HOCH2CH2O2+NO3->HOCH2CHO+HO2+NO2        206  0
+RN9O2+NO3->CH3CHO+HCHO+HO2+NO2          207  0
+RN12O2+NO3->CH3CHO+CH3CHO+HO2+NO2       208  0
+RN15O2+NO3->C2H5CHO+CH3CHO+HO2+NO2      209  0
+RN18O2+NO3->C2H5CHO+C2H5CHO+HO2+NO2     210  0
+RN15AO2+NO3->CARB13+HO2+NO2             211  0
+RN18AO2+NO3->CARB16+HO2+NO2             212  0
+CH3CO3+NO3->CH3O2+NO2                   213  0
+C2H5CO3+NO3->C2H5O2+NO2                 214  0
+HOCH2CO3+NO3->HO2+HCHO+NO2              215  0
+RN8O2+NO3->CH3CO3+HCHO+NO2              216  0
+RN11O2+NO3->CH3CO3+CH3CHO+NO2           217  0
+RN14O2+NO3->C2H5CO3+CH3CHO+NO2          218  0
+RN17O2+NO3->RN16AO2+NO2                 219  0
+RU14O2+NO3->UCARB12+HO2+NO2             220  0
+RU14O2+NO3->UCARB10+HCHO+HO2+NO2        221  0
+RU12O2+NO3->CARB6+HOCH2CHO+NO2+HO2      222  0
+RU12O2+NO3->CARB7+CARB3+HO2+NO2         223  0
+RU10O2+NO3->CH3CO3+HOCH2CHO+NO2         224  0
+RU10O2+NO3->CARB6+HCHO+HO2+NO2          225  0
+RU10AO2+NO3->CARB7+CO+HO2+NO2           226  0
+NRN6O2+NO3->HCHO+HCHO+NO2+NO2           227  0
+NRN9O2+NO3->CH3CHO+HCHO+NO2+NO2         228  0
+NRN12O2+NO3->CH3CHO+CH3CHO+NO2+NO2      229  0
+NRU14O2+NO3->NUCARB12+HO2+NO2           230  0
+NRU12O2+NO3->NOA+CO+HO2+NO2             231  0
+RTN28O2+NO3->TNCARB26+HO2+NO2           232  0
+NRTN28O2+NO3->TNCARB26+NO2+NO2          233  0
+RTN26O2+NO3->RTN25O2+NO2                234  0
+RTN25O2+NO3->RTN24O2+NO2                235  0
+RTN24O2+NO3->RTN23O2+NO2                236  0
+RTN23O2+NO3->CH3COCH3+RTN14O2+NO2       237  0
+RTN14O2+NO3->HCHO+TNCARB10+HO2+NO2      238  0
+RTN10O2+NO3->RN8O2+CO+NO2               239  0
+RTX28O2+NO3->TXCARB24+HCHO+HO2+NO2      240  0
+RTX24O2+NO3->TXCARB22+HO2+NO2           241  0
+RTX22O2+NO3->CH3COCH3+RN13O2+NO2        242  0
+NRTX28O2+NO3->TXCARB24+HCHO+NO2+NO2     243  0
+CH3O2+HO2->CH3OOH                       244  0
+C2H5O2+HO2->C2H5OOH                     245  0
+RN10O2+HO2->RN10OOH                     246  0
+IC3H7O2+HO2->IC3H7OOH                   247  0
+RN13O2+HO2->RN13OOH                     248  0
+RN16O2+HO2->RN16OOH                     249  0
+RN19O2+HO2->RN19OOH                     250  0
+RN13AO2+HO2->RN13OOH                    251  0
+RN16AO2+HO2->RN16OOH                    252  0
+RA13O2+HO2->RA13OOH                     253  0
+RA16O2+HO2->RA16OOH                     254  0
+RA19AO2+HO2->RA19OOH                    255  0
+RA19CO2+HO2->RA19OOH                    256  0
+HOCH2CH2O2+HO2->HOC2H4OOH               257  0
+RN9O2+HO2->RN9OOH                       258  0
+RN12O2+HO2->RN12OOH                     259  0
+RN15O2+HO2->RN15OOH                     260  0
+RN18O2+HO2->RN18OOH                     261  0
+RN15AO2+HO2->RN15OOH                    262  0
+RN18AO2+HO2->RN18OOH                    263  0
+CH3CO3+HO2->CH3CO3H                     264  0
+C2H5CO3+HO2->C2H5CO3H                   265  0
+HOCH2CO3+HO2->HOCH2CO3H                 266  0
+RN8O2+HO2->RN8OOH                       267  0
+RN11O2+HO2->RN11OOH                     268  0
+RN14O2+HO2->RN14OOH                     269  0
+RN17O2+HO2->RN17OOH                     270  0
+RU14O2+HO2->RU14OOH                     271  0
+RU12O2+HO2->RU12OOH                     272  0
+RU10O2+HO2->RU10OOH                     273  0
+NRN6O2+HO2->NRN6OOH                     274  0
+NRN9O2+HO2->NRN9OOH                     275  0
+NRN12O2+HO2->NRN12OOH                   276  0
+NRU14O2+HO2->NRU14OOH                   277  0
+NRU12O2+HO2->NRU12OOH                   278  0
+RTN28O2+HO2->RTN28OOH                   279  0
+NRTN28O2+HO2->NRTN28OOH                 280  0
+RTN26O2+HO2->RTN26OOH                   281  0
+RTN25O2+HO2->RTN25OOH                   282  0
+RTN24O2+HO2->RTN24OOH                   283  0
+RTN23O2+HO2->RTN23OOH                   284  0
+RTN14O2+HO2->RTN14OOH                   285  0
+RTN10O2+HO2->RTN10OOH                   286  0
+RTX28O2+HO2->RTX28OOH                   287  0
+RTX24O2+HO2->RTX24OOH                   288  0
+RTX22O2+HO2->RTX22OOH                   289  0
+NRTX28O2+HO2->NRTX28OOH                 290  0
+CH3O2->HCHO+HO2                         291  0
+CH3O2->HCHO                             292  0
+CH3O2->CH3OH                            293  0
+C2H5O2->CH3CHO+HO2                      294  0
+C2H5O2->CH3CHO                          295  0
+C2H5O2->C2H5OH                          296  0
+RN10O2->C2H5CHO+HO2                     297  0
+RN10O2->C2H5CHO                         298  0
+RN10O2->NPROPOL                         299  0
+IC3H7O2->CH3COCH3+HO2                   300  0
+IC3H7O2->CH3COCH3                       301  0
+IC3H7O2->IPROPOL                        302  0
+RN13O2->CH3CHO+C2H5O2                   303  0
+RN13O2->CARB11A+HO2                     304  0
+RN13AO2->RN12O2                         305  0
+RN16AO2->RN15O2                         306  0
+RA13O2->CARB3+UDCARB8+HO2               307  0
+RA16O2->CARB3+UDCARB11+HO2              308  0
+RA16O2->CARB6+UDCARB8+HO2               309  0
+RA19AO2->CARB3+UDCARB14+HO2             310  0
+RA19CO2->CARB3+UDCARB14+HO2             311  0
+RN16O2->RN15AO2                         312  0
+RN19O2->RN18AO2                         313  0
+HOCH2CH2O2->HCHO+HCHO+HO2               314  0
+HOCH2CH2O2->HOCH2CHO+HO2                315  0
+RN9O2->CH3CHO+HCHO+HO2                  316  0
+RN12O2->CH3CHO+CH3CHO+HO2               317  0
+RN15O2->C2H5CHO+CH3CHO+HO2              318  0
+RN18O2->C2H5CHO+C2H5CHO+HO2             319  0
+RN15AO2->CARB13+HO2                     320  0
+RN18AO2->CARB16+HO2                     321  0
+CH3CO3->CH3O2                           322  0
+C2H5CO3->C2H5O2                         323  0
+HOCH2CO3->HCHO+HO2                      324  0
+RN8O2->CH3CO3+HCHO                      325  0
+RN11O2->CH3CO3+CH3CHO                   326  0
+RN14O2->C2H5CO3+CH3CHO                  327  0
+RN17O2->RN16AO2                         328  0
+RU14O2->UCARB12+HO2                     329  0
+RU14O2->UCARB10+HCHO+HO2                330  0
+RU12O2->CARB6+HOCH2CHO+HO2              331  0
+RU12O2->CARB7+CARB3+HO2                 332  0
+RU10O2->CH3CO3+HOCH2CHO                 333  0
+RU10O2->CARB6+HCHO+HO2                  334  0
+RU10O2->CARB7+HCHO+HO2                  335  0
+NRN6O2->HCHO+HCHO+NO2                   336  0
+NRN9O2->CH3CHO+HCHO+NO2                 337  0
+NRN12O2->CH3CHO+CH3CHO+NO2              338  0
+NRU14O2->NUCARB12+HO2                   339  0
+NRU12O2->NOA+CO+HO2                     340  0
+RTN28O2->TNCARB26+HO2                   341  0
+NRTN28O2->TNCARB26+NO2                  342  0
+RTN26O2->RTN25O2                        343  0
+RTN25O2->RTN24O2                        344  0
+RTN24O2->RTN23O2                        345  0
+RTN23O2->CH3COCH3+RTN14O2               346  0
+RTN14O2->HCHO+TNCARB10+HO2              347  0
+RTN10O2->RN8O2+CO                       348  0
+RTX28O2->TXCARB24+HCHO+HO2              349  0
+RTX24O2->TXCARB22+HO2                   350  0
+RTX22O2->CH3COCH3+RN13O2                351  0
+NRTX28O2->TXCARB24+HCHO+NO2             352  0
+OH+CARB14->RN14O2                       353  0
+OH+CARB17->RN17O2                       354  0
+OH+CARB11A->RN11O2                      355  0
+OH+CARB7->CARB6+HO2                     356  0
+OH+CARB10->CARB9+HO2                    357  0
+OH+CARB13->RN13O2                       358  0
+OH+CARB16->RN16O2                       359  0
+OH+UCARB10->RU10O2                      360  0
+NO3+UCARB10->RU10O2+HNO3                361  0
+O3+UCARB10->HCHO+CARB6                  363  0
+OH+HOCH2CHO->HOCH2CO3                   364  0
+NO3+HOCH2CHO->HOCH2CO3+HNO3             365  0
+OH+CARB3->CO+CO+HO2                     366  0
+OH+CARB6->CH3CO3+CO                     367  0
+OH+CARB9->RN9O2                         368  0
+OH+CARB12->RN12O2                       369  0
+OH+CARB15->RN15O2                       370  0
+OH+CCARB12->RN12O2                      371  0
+OH+UCARB12->RU12O2                      372  0
+NO3+UCARB12->RU12O2+HNO3                373  0
+O3+UCARB12->CARB3+CARB7+CO              375  0
+OH+NUCARB12->NRU12O2                    376  0
+OH+NOA->CARB6+NO2                       377  0
+OH+UDCARB8->C2H5O2                      378  0
+OH+UDCARB8->ANHY+HO2                    379  0
+OH+UDCARB11->RN10O2                     380  0
+OH+UDCARB11->ANHY+CH3O2                 381  0
+OH+UDCARB14->RN13O2                     382  0
+OH+UDCARB14->ANHY+C2H5O2                383  0
+OH+TNCARB26->RTN26O2                    384  0
+OH+TNCARB15->RN15AO2                    385  0
+OH+TNCARB10->RTN10O2                    386  0
+NO3+TNCARB26->RTN26O2+HNO3              387  0
+NO3+TNCARB10->RTN10O2+HNO3              388  0
+OH+RCOOH25->RTN25O2                     389  0
+OH+TXCARB24->RTX24O2                    390  0
+OH+TXCARB22->RTX22O2                    391  0
+OH+CH3NO3->HCHO+NO2                     392  0
+OH+C2H5NO3->CH3CHO+NO2                  393  0
+OH+RN10NO3->C2H5CHO+NO2                 394  0
+OH+IC3H7NO3->CH3COCH3+NO2               395  0
+OH+RN13NO3->CARB11A+NO2                 396  0
+OH+RN16NO3->CARB14+NO2                  397  0
+OH+RN19NO3->CARB17+NO2                  398  0
+OH+HOC2H4NO3->HOCH2CHO+NO2              399  0
+OH+RN9NO3->CARB7+NO2                    400  0
+OH+RN12NO3->CARB10+NO2                  401  0
+OH+RN15NO3->CARB13+NO2                  402  0
+OH+RN18NO3->CARB16+NO2                  403  0
+OH+RU14NO3->UCARB12+NO2                 404  0
+OH+RA13NO3->CARB3+UDCARB8+NO2           405  0
+OH+RA16NO3->CARB3+UDCARB11+NO2          406  0
+OH+RA19NO3->CARB6+UDCARB11+NO2          407  0
+OH+RTN28NO3->TNCARB26+NO2               408  0
+OH+RTN25NO3->CH3COCH3+TNCARB15+NO2      409  0
+OH+RTX28NO3->TXCARB24+HCHO+NO2          410  0
+OH+RTX24NO3->TXCARB22+NO2               411  0
+OH+RTX22NO3->CH3COCH3+CCARB12+NO2       412  0
+OH+AROH14->RAROH14                      413  0
+NO3+AROH14->RAROH14+HNO3                414  0
+RAROH14+NO2->ARNOH14                    415  0
+OH+ARNOH14->CARB13+NO2                  416  0
+NO3+ARNOH14->CARB13+NO2+HNO3            417  0
+OH+AROH17->RAROH17                      418  0
+NO3+AROH17->RAROH17+HNO3                419  0
+RAROH17+NO2->ARNOH17                    420  0
+OH+ARNOH17->CARB16+NO2                  421  0
+NO3+ARNOH17->CARB16+NO2+HNO3            422  0
+OH+CH3OOH->CH3O2                        423  0
+OH+CH3OOH->HCHO+OH                      424  0
+OH+C2H5OOH->CH3CHO+OH                   425  0
+OH+RN10OOH->C2H5CHO+OH                  426  0
+OH+IC3H7OOH->CH3COCH3+OH                427  0
+OH+RN13OOH->CARB11A+OH                  428  0
+OH+RN16OOH->CARB14+OH                   429  0
+OH+RN19OOH->CARB17+OH                   430  0
+OH+CH3CO3H->CH3CO3                      431  0
+OH+C2H5CO3H->C2H5CO3                    432  0
+OH+HOCH2CO3H->HOCH2CO3                  433  0
+OH+RN8OOH->CARB6+OH                     434  0
+OH+RN11OOH->CARB9+OH                    435  0
+OH+RN14OOH->CARB12+OH                   436  0
+OH+RN17OOH->CARB15+OH                   437  0
+OH+RU14OOH->UCARB12+OH                  438  0
+OH+RU12OOH->RU10OOH+CO+HO2              439  0
+OH+RU10OOH->CARB7+CO+OH                 440  0
+OH+NRU14OOH->NUCARB12+OH                441  0
+OH+NRU12OOH->NOA+CARB3+OH               442  0
+OH+HOC2H4OOH->HOCH2CHO+OH               443  0
+OH+RN9OOH->CARB7+OH                     444  0
+OH+RN12OOH->CARB10+OH                   445  0
+OH+RN15OOH->CARB13+OH                   446  0
+OH+RN18OOH->CARB16+OH                   447  0
+OH+NRN6OOH->HCHO+HCHO+NO2+OH            448  0
+OH+NRN9OOH->CH3CHO+HCHO+NO2+OH          449  0
+OH+NRN12OOH->CH3CHO+CH3CHO+NO2+OH       450  0
+OH+RA13OOH->CARB3+UDCARB8+OH            451  0
+OH+RA16OOH->CARB3+UDCARB11+OH           452  0
+OH+RA19OOH->CARB6+UDCARB11+OH           453  0
+OH+RTN28OOH->TNCARB26+OH                454  0
+OH+RTN26OOH->RTN26O2                    455  0
+OH+NRTN28OOH->TNCARB26+NO2+OH           456  0
+OH+RTN25OOH->RTN25O2                    457  0
+OH+RTN24OOH->RTN24O2                    458  0
+OH+RTN23OOH->RTN23O2                    459  0
+OH+RTN14OOH->RTN14O2                    460  0
+OH+RTN10OOH->RTN10O2                    461  0
+OH+RTX28OOH->RTX28O2                    462  0
+OH+RTX24OOH->TXCARB22+OH                463  0
+OH+RTX22OOH->CH3COCH3+CCARB12+OH        464  0
+OH+NRTX28OOH->NRTX28O2                  465  0
+OH+ANHY->HOCH2CH2O2                     466  0
+CH3CO3+NO2->PAN                         467  0
+PAN->CH3CO3+NO2                         468  0
+C2H5CO3+NO2->PPN                        469  0
+PPN->C2H5CO3+NO2                        470  0
+HOCH2CO3+NO2->PHAN                      471  0
+4PHAN->HOCH2CO3+NO2                     472  0
+OH+PAN->HCHO+CO+NO2                     473  0
+OH+PPN->CH3CHO+CO+NO2                   474  0
+OH+PHAN->HCHO+CO+NO2                    475  0
+RU12O2+NO2->RU12PAN                     476  0
+RU12PAN->RU12O2+NO2                     477  0
+RU10O2+NO2->MPAN                        478  0
+MPAN->MACO3+NO2                         479  0
+OH+MPAN->CARB7+CO+NO2                   480  0
+OH+RU12PAN->UCARB10+NO2                 481  0
+RTN26O2+NO2->RTN26PAN                   482  0
+RTN26PAN->RTN26O2+NO2                   483  0
+OH+RTN26PAN->CH3COCH3+CARB16+NO2        484  0
+RTN28NO3->P2604                         485  0
+P2604->RTN28NO3                         486  0
+RTX28NO3->P4608                         487  0
+P4608->RTX28NO3                         488  0
+RCOOH25->P2631                          489  0
+P2631->RCOOH25                          490  0
+RTN24OOH->P2635                         491  0
+P2635->RTN24OOH                         492  0
+RTX28OOH->P4610                         493  0
+P4610->RTX28OOH                         494  0
+RTN28OOH->P2605                         495  0
+P2605->RTN28OOH                         496  0
+RTN26OOH->P2630                         497  0
+P2630->RTN26OOH                         498  0
+RTN26PAN->P2629                         499  0
+P2629->RTN26PAN                         500  0
+RTN25OOH->P2632                         501  0
+P2632->RTN25OOH                         502  0
+RTN23OOH->P2637                         503  0
+P2637->RTN23OOH                         504  0
+ARNOH14->P3612                          505  0
+P3612->ARNOH14                          506  0
+ARNOH17->P3613                          507  0
+P3613->ARNOH17                          508  0
+ANHY->P3442                             509  0
+P3442->ANHY                             510  0
+RU12OOH->P2007                          511  0
+P2007->RU12OOH                          512  0
+OH+DMS->CH3SO+HCHO                      513  0
+OH+DMS->DMSO+HO2                        514  0
+DMS+NO3->CH3SO+HCHO+HNO3                515  0
+OH+DMSO->MSIA+CH3O2                     516  0
+CH3SO+O3->CH3SO2                        517  0
+CH3SO+NO2->CH3SO2+NO                    518  0
+MSIA+OH->CH3SO2                         519  0
+CH3SO2+O3->CH3SO3                       520  0
+CH3SO2+NO2->CH3SO3+NO                   521  0
+CH3SO2->CH3O2+SO2                       522  0
+CH3SO3+HO2->MSA                         523  0
+CH3SO3->CH3O2+SA                        524  0
+CH3SO3+HCHO->MSA+HO2+CO                 525  0
+CH3BR+OH->                              526  0
+HSO3-(aq)+H2O2(aq)->SO4--(aq)           527  0
+HSO3-(aq)+O3(aq)->SO4--(aq)             528  0
+SO3--(aq)+O3(aq)=SO4--(aq)              529  0
+SO2(aq)->SO4--(aq)                      530  0
+2NH4+(aq)+SO4--(aq)->(NH4)2SO4(aq)      531  0
+O3+C5H8->UCARB10+HCHO+H2O2              532  0
+O3+C5H8->CH3CO3+HCHO+HCHO+CO+OH         533  0
+O3+C5H8->UCARB10+CO                     534  0
+O3+C5H8->HCHO+CH3O2+HCHO+CO+HO2         535  0
+RU14O2->HPUCARB12+HO2                   536  0
+RU14O2->DHPR12O2                        537  0
+RU14O2->UCARB10+HCHO+OH                 538  0
+DHPR12O2+NO->CARB3+RN8OOH+OH+NO2        539  0
+DHPR12O2+NO3->CARB3+RN8OOH+OH+NO2       540  0
+DHPR12O2+HO2->DHPR12OOH                 541  0
+DHPR12O2->CARB3+RN8OOH+OH               542  0
+DHPR12O2->DHPCARB9+CO+OH                543  0
+OH+HPUCARB12->HUCARB9+CO+OH             544  0
+O3+HPUCARB12->CARB3+CARB6+OH+OH         545  0
+NO3+HPUCARB12->HUCARB9+CO+OH+HNO3       546  0
+OH+HUCARB9->CARB6+CO+HO2                549  0
+OH+DHPCARB9->RN8OOH+CO+OH               547  0
+OH+DHPR12OOH->DHPCARB9+CO+OH            548  0
+OH+RU14NO3->RU10NO3+HCHO+HO2            550  0
+OH+RU14NO3->RU12NO3+HO2                 551  0
+OH+RU12NO3->CARB7+CARB3+NO2             552  0
+OH+RU10NO3->CARB7+CO+NO2                553  0
+OH+RU14OOH->IEPOX+OH                    554  0
+OH+RU14OOH->RU14O2                      555  0
+OH+IEPOX->RU12O2                        556  0
+RU12O2+NO->CARB7+HOCH2CO3+NO2           557  0
+RU12O2+NO->RU12NO3                      558  0
+RU12O2+NO3->CARB7+HOCH2CO3+NO2          559  0
+RU12O2->CARB7+HOCH2CO3                  560  0
+RU12O2->DHCARB9+CO+OH                   561  0
+DHCARB9+OH->CARB6+HO2                   562  0
+UCARB10+OH->RU10AO2                     563  0
+UCARB10+OH->MACO3                       564  0
+RU10AO2+NO->CARB7+CO+HO2+NO2            565  0
+RU10AO2+NO->RU10NO3                     566  0
+RU10AO2+NO3->CARB7+CO+HO2+NO2           567  0
+RU10AO2+HO2->RU10OOH                    568  0
+RU10AO2->CARB7+CO+HO2                   569  0  
+RU10AO2->CARB7+CO+OH                    570  0
+MACO3+NO->CH3O2+CO+HCHO+NO2+HO2         571  0
+MACO3+NO->CH3CO3+HCHO+NO2+HO2           572  0
+MACO3+NO2->MPAN                         573  0
+MACO3+NO3->CH3O2+CO+HCHO+HO2+NO2        574  0
+MACO3+NO3->CH3CO3+HCHO+HO2+NO2          575  0
+MACO3+HO2->RU10OOH                      576  0
+MACO3+HO2->CH3O2+CO+HCHO+OH             577  0
+MACO3->CH3O2+CO+HCHO+HO2                578  0
+MACO3->CH3CO3+HCHO+HO2                  579  0
+OH+MPAN->HMML+NO3                       580  0
+OH+HMML->CARB6+OH                       581  0
+OH+HMML->HCOOH+CH3CO3                   582  0
+NRU12O2+NO->NOA+CARB3+HO2+NO2           583  0
+NRU12O2+NO3->NOA+CARB3+HO2+NO2          584  0
+NRU12O2->NOA+CARB3+HO2                  585  0
+CH3CO3+HO2->CH3O2+OH                    586  0
+HOCH2CO3+HO2->HCHO+HO2+OH               587  0
+O3+UCARB12->CARB3+HOCH2CHO+CH3CO3+OH    588  0
+OH+CARB3->CO+OH                         589  0
+C2H5CO3+HO2->C2H5O2+OH                  590  0
+RTN26O2+HO2->RTN25O2+OH                 591  0
+O3 emission                             806  0
+NO emission                             808  0
+H2 emission                             810  0
+CO emission                             811  0
+HNO3 emission                           814  0
+SO2 emission                            816  0
+CH4 emission                            821  0
+C2H6 emission                           823  0
+C3H8 emission                           825  0
+nC4H10 emission                         828  0
+C2H4 emission                           830  0
+C3H6 emission                           832  0
+TBUT2ENE emission                       834  0
+HCHO emission                           839  0
+HCOOH emission                          840  0
+CH3CO2H emission                        841  0
+CH3CHO emission                         842  0
+C5H8 emission                           843  0
+Apinene emission                        847  0
+Bpinene emission                        853  0
+C2H2 emission                           859  0
+Benzene emission                        861  0
+TOLUENE emission                        864  0
+oXYL emission                           867  0
+C2H5CHO emission                        871  0
+Acetone emission                        873  0
+CH3OH emission                          876  0
+C2H5OH emission                         877  0
+MEK emission                            901  0
+EMPOA emission                         1018  0
+DMS emission                           1020  0
+CH3BR emission                         1027  0
+NH3 emission                           1028  0
+NO2 dry dep                            1104  0
+O3 dry dep                             1106  0
+H2 dry dep                             1110  0
+CO dry dep                             1111  0
+H2O2 dry dep                           1112  0
+HNO3 dry dep                           1114  0
+SO2 dry dep                            1116  0
+NAER dry dep                           1119  0
+SA dry dep                             1120  0
+HCHO dry dep                           1139  0
+HCOOH dry dep                          1140  0
+CH3CO2H dry dep                        1141  0
+CH3CHO dry dep                         1142  0
+UCARB10 dry dep                        1146  0
+CH3COCH3 dry dep                       1173  0
+CH3OH dry dep                          1176  0
+C2H5OH dry dep                         1177  0
+CARB6 dry dep                          1198  0
+MEK dry dep                            1201  0
+CH3OOH dry dep                         1244  0
+C2H5OOH dry dep                        1245  0
+C3H7OOH dry dep                        1247  0
+PAN dry dep                            1298  0
+MPAN dry dep                           1302  0
+P2604 dry dep                          1304  0
+P4608 dry dep                          1305  0
+P2631 dry dep                          1306  0
+P2635 dry dep                          1307  0
+P4610 dry dep                          1308  0
+P2605 dry dep                          1309  0
+P2630 dry dep                          1310  0
+P2629 dry dep                          1311  0
+P2632 dry dep                          1312  0
+P2637 dry dep                          1313  0
+P3612 dry dep                          1314  0
+P3613 dry dep                          1315  0
+P3442 dry dep                          1316  0
+EMPOA dry dep                          1318  0
+P2007 dry dep                          1319  0
+MSA dry dep                            1326  0
+CH3BR dry dep                          1327  0
+NH3 dry dep                            1328  0
+N205 wet dep                           1407  0
+H2O2 wet dep                           1412  0
+HONO wet dep                           1413  0
+HNO3 wet dep                           1414  0
+SO2 wet dep                            1416  0
+NAER wet dep                           1419  0
+SA wet dep                             1420  0
+HCHO wet dep                           1439  0
+HCOOH wet dep                          1440  0
+CH3COOH wet dep                        1441  0
+CH3OOH wet dep                         1544  0
+C2H5OOH wet dep                        1545  0
+C3H7OOH wet dep                        1547  0
+P2604 wet dep                          1604  0
+P4608 wet dep                          1605  0
+P2631 wet dep                          1606  0
+P2635 wet dep                          1607  0
+P4610 wet dep                          1608  0
+P2605 wet dep                          1609  0
+P2630 wet dep                          1610  0
+P2629 wet dep                          1611  0
+P2632 wet dep                          1612  0
+P2637 wet dep                          1613  0
+P3612 wet dep                          1614  0
+P3613 wet dep                          1615  0
+P3442 wet dep                          1616  0
+EMPOA wet dep                          1618  0
+P2007 wet dep                          1619  0
+MSA wet dep                            1626  0
+NH3 wet dep                            1628  0

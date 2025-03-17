@@ -1,6 +1,6 @@
-*/stoch3d*
-*/run_*
-*/RESTART*
-*/DUMP*
-*/*.o
-*/*.sh
+stoch3d*
+run_*
+RESTART*
+DUMP*
+*.o
+*.sh

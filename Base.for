@@ -7498,17 +7498,17 @@ C      PHOTOLYTIC REACTIONS
 C      --------------------
 C
       DO 1020 JB=1,NBLOCK
-C        O3 + hv = OD
+C        O3 + hv = O1D
         FLUX(JB,701)=FLUX(JB,701)+DJ(JB,1)*Y(JB,6)*DTS/M(JB)
 C        O3 + hv = O
         FLUX(JB,702)=FLUX(JB,702)+DJ(JB,2)*Y(JB,6)*DTS/M(JB)
 C        H2O2 + hv = OH + OH
         FLUX(JB,703)=FLUX(JB,703)+DJ(JB,3)*Y(JB,12)*DTS/M(JB)
-C        NO2 + hv = NO + OP
+C        NO2 + hv = NO + O
         FLUX(JB,704)=FLUX(JB,704)+DJ(JB,4)*Y(JB,4)*DTS/M(JB)
 C        NO3 + hv = NO
         FLUX(JB,705)=FLUX(JB,705)+DJ(JB,5)*Y(JB,5)*DTS/M(JB)
-C        NO3 + hv = NO2 + OP
+C        NO3 + hv = NO2 + O
         FLUX(JB,706)=FLUX(JB,706)+DJ(JB,6)*Y(JB,5)*DTS/M(JB)
 C        HONO + hv  = OH + NO
         FLUX(JB,707)=FLUX(JB,707)+DJ(JB,7)*Y(JB,13)*DTS/M(JB)
@@ -8441,7 +8441,7 @@ C
 C     Reaction (142) RU10O2 + NO = CARB6 + HCHO + HO2 + NO2                             
          RC(JB,142) = KRO2NO*0.232         
 C
-C     Reaction (143) RU10O2 + NO = RU10NO3                            
+C     Reaction (143) RU10O2 + NO = RU10NO3 + NO2                            
          RC(JB,143) = KRO2NO*0.027          
 C
 C     Reaction (144) NRN6O2 + NO = HCHO + HCHO + NO2 + NO2                              
@@ -9338,7 +9338,7 @@ C
 C     Reaction (441) OH + NRU14OOH = NUCARB12 + OH                                      
          RC(JB,441) = 1.03D-10                     
 C
-C     Reaction (442) OH + NRU12OOH = NOA + CO + OH                                      
+C     Reaction (442) OH + NRU12OOH = NOA + CARB3 + OH                                      
          RC(JB,442) = 2.65D-11                     
 C
 C     Reaction (443) OH + HOC2H4OOH = HOCH2CHO + OH                                     
@@ -10529,13 +10529,13 @@ C C2H6 (anthro)
 C C3H8 (anthro)
           EMISS(25,I,J)=(CLASS(1,25)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(44.0*31536000.0)
-C C4H10 (anthro)
+C NC4H10 (anthro)
           EMISS(28,I,J)=(CLASS(1,28)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(58.0*31536000.0)
 C CH3OH (anthro)
           EMISS(76,I,J)=(CLASS(1,76)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(32.0*31536000.0)
-C ACETONE (anthro)
+C CH3COCH3 (anthro)
           EMISS(73,I,J)=(CLASS(1,73)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(58.0*31536000.0)
 C C2H4 (anthro)
@@ -10544,7 +10544,7 @@ C C2H4 (anthro)
 C C3H6 (anthro)
           EMISS(32,I,J)=(CLASS(1,32)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(42.0*31536000.0)
-C O-XYL (anthro)
+C OXYL (anthro)
           EMISS(67,I,J)=(CLASS(1,67)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(106.0*31536000.0)
 C HCHO (anthro)
@@ -10559,7 +10559,7 @@ C H2 as NOx
 C TOLUENE (anthro) 
           EMISS(64,I,J)=(CLASS(1,64)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(92.0*31536000.0)
-C Isoprene (anthro) as NOX
+C C5H8 (anthro) as NOX
           EMISS(43,I,J)=(CLASS(1,43)/100.014)*NOXDAT(I1,J1)*1E3*NA
      &       /(68.0*31526000.0)
 C BENZENE (anthro)
@@ -10674,15 +10674,15 @@ C                                 LAND   SEA    SPECIES
       DATA DVLAND(40),DVSEA(40)   /27.6,13.0/ ! HCOOH - rvkdiss( adapted)
       DATA DVLAND(41),DVSEA(41)   /13.0,13.4/ ! CH3CO2H - rvkdiss( adapted)
       DATA DVLAND(42),DVSEA(42)   /0.7,  0.3/ ! CH3CHO - rvkdiss( adapted)
-      DATA DVLAND(46),DVSEA(46)   /0.7,  0.5/ ! Methacrolein - UCARB10 - rvkdiss( adapted)
+      DATA DVLAND(46),DVSEA(46)   /0.7,  0.5/ ! UCARB10 - Methacrolein - rvkdiss( adapted)
       DATA DVLAND(73),DVSEA(73)   /0.8,  0.5/ ! CH3COCH3 - rvkdiss( adapted)
       DATA DVLAND(76),DVSEA(76)   /1.6,  3.0/ ! CH3OH - rvkdiss( adapted)
       DATA DVLAND(77),DVSEA(77)   /1.6,  3.0/ ! C2H5OH - CH3OH rvkdiss( adapted)
-      DATA DVLAND(98),DVSEA(98)   /3.5, 11.4/ ! Methylglyoxal - CARB6 - rvkdiss( adapted)
+      DATA DVLAND(98),DVSEA(98)   /3.5, 11.4/ ! CARB6 - Methylglyoxal - rvkdiss( adapted)
       DATA DVLAND(101),DVSEA(101) /0.7,  0.4/ ! MEK - rvkdiss( adapted)
       DATA DVLAND(144),DVSEA(144) /5.0,  5.0/ ! CH3OOH
       DATA DVLAND(145),DVSEA(145) /5.0,  5.0/ ! C2H5OOH
-      DATA DVLAND(147),DVSEA(147) /5.0,  5.0/ ! C3H7OOH      
+      DATA DVLAND(147),DVSEA(147) /5.0,  5.0/ ! IC3H7OOH      
       DATA DVLAND(198),DVSEA(198) /2.0,  0.0/ ! PAN
       DATA DVLAND(202),DVSEA(202) /2.0,  0.0/ ! MPAN - as PAN
 c      DATA DVLAND(35),DVSEA(35)   /5.0,  5.0/ ! C4H9OOH
@@ -10729,14 +10729,14 @@ C                                  Anth  ,Biomass,Veg   ,Soil  ,Oceans
       DATA (CLASS(IC,10),IC=1,5)  /20.0,   20.0,  0.0,  5.0,  5.0 / ! H2
       DATA (CLASS(IC,23),IC=1,5)  /5.69,   3.17,  0.0,  0.0,  0.78/ ! C2H6
       DATA (CLASS(IC,42),IC=1,5)  /1.8,    3.58,  20.7,  0.0,  0.0 / ! CH3CHO
-      DATA (CLASS(IC,28),IC=1,5)  /53.29,  1.1,   0.0,  0.0,  0.0 / ! C4H10
+      DATA (CLASS(IC,28),IC=1,5)  /53.29,  1.1,   0.0,  0.0,  0.0 / ! NC4H10
       DATA (CLASS(IC,16),IC=1,5)  /56.6,   2.2,   0.0,  0.0,  0.0 / ! SO2
       DATA (CLASS(IC,30),IC=1,5)  /4.15,   6.25,  26.9, 0.0,  1.19 / ! C2H4
       DATA (CLASS(IC,32),IC=1,5)  /2.04,   1.94,  15.8, 0.0,  1.3 / ! C3H6
       DATA (CLASS(IC,67),IC=1,5)  /4.0,    0.7,   0.0,  0.0,  0.0 / ! OXYL
       DATA (CLASS(IC,25),IC=1,5)  /6.42,   0.55,  0.0, 0.0,  1.06/ ! C3H8
-      DATA (CLASS(IC,76),IC=1,5) /0.963,  9.2,   99.6, 0.0,  0.0 / ! METHANOL
-      DATA (CLASS(IC,73),IC=1,5)  /0.297,  1.83,  43.7, 0.0,  0.0 / ! ACETONE
+      DATA (CLASS(IC,76),IC=1,5) /0.963,  9.2,   99.6, 0.0,  0.0 / ! CH3OH
+      DATA (CLASS(IC,73),IC=1,5)  /0.297,  1.83,  43.7, 0.0,  0.0 / ! CH3COCH3
       DATA (CLASS(IC,43),IC=1,5)  /0.0,    0.0,   535.0, 0.0, 0.0 / ! C5H8
       DATA (CLASS(IC,64),IC=1,5)  /5.3,    1.6,   0.0,  0.0,  0.0 / ! TOLUENE
       DATA (CLASS(IC,47),IC=1,5)  /0.0,    0.0,  108.2, 0.0, 0.0 / ! APINENE
@@ -10884,10 +10884,10 @@ C
       DATA DSC(20),CSC(20)   / 5.0,  1.5 / ! SA
       DATA DSC(39),CSC(39)   / 2.0,  4.0 / ! HCHO
       DATA DSC(40),CSC(40)   / 2.0,  4.0/ ! HCOOH
-      DATA DSC(41),CSC(41)   / 2.0,  4.0/ ! CH3COOH
+      DATA DSC(41),CSC(41)   / 2.0,  4.0/ ! CH3CO2H
       DATA DSC(144),CSC(144) / 2.0,  4.0/ ! CH3OOH
       DATA DSC(145),CSC(145) / 2.0,  4.0/ ! C2H5OOH
-      DATA DSC(147),CSC(147) / 2.0,  4.0/ ! C3H7OOH
+      DATA DSC(147),CSC(147) / 2.0,  4.0/ ! IC3H7OOH
       DATA DSC(204),CSC(204) / 5.0,  1.0/ ! P2604
       DATA DSC(205),CSC(205) / 5.0,  1.0/ ! P4608
       DATA DSC(206),CSC(206) / 5.0,  1.0/ ! P2631
@@ -11217,7 +11217,7 @@ C C3H8
      &      CLASS(3,25)*VEG(I1,J1)+
      &      CLASS(4,25)*SOIL(I1,J1)+
      &      CLASS(5,25)*OCEAN(I1,J1))*1E12*NA/(44.0*31536000.0)
-C C4H10
+C NC4H10
           EMISS(28,I,J)=EMISS(28,I,J)+
      &      (CLASS(2,28)*BURN(I1,J1)+
      &      CLASS(3,28)*VEG(I1,J1)+
@@ -11277,13 +11277,13 @@ C CH3CHO
      &      CLASS(3,42)*VEG(I1,J1)+
      &      CLASS(4,42)*SOIL(I1,J1)+
      &      CLASS(5,42)*OCEAN(I1,J1))*1E12*NA/(44.0*31536000.0)
-C O-XYL
+C OXYL
           EMISS(67,I,J)=EMISS(67,I,J)+
      &      (CLASS(2,67)*BURN(I1,J1)+
      &      CLASS(3,67)*VEG(I1,J1)+
      &      CLASS(4,67)*SOIL(I1,J1)+
      &      CLASS(5,67)*OCEAN(I1,J1))*1E12*NA/(106.0*31536000.0)
-C ACETONE
+C CH3COCH3
           EMISS(73,I,J)=EMISS(73,I,J)+
      &      (CLASS(2,73)*BURN(I1,J1)+
      &      CLASS(3,73)*VEG(I1,J1)+

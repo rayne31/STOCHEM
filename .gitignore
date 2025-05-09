@@ -4,3 +4,11 @@ RESTART*
 DUMP*
 *.o
 *.sh
+.ipynb_checkpoints
+*.bud
+*.tot
+*.out
+*.sta
+*.dat
+!chem10_soa.dat
+!flux10_OH.dat

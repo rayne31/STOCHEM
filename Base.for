@@ -10458,7 +10458,7 @@ C----------------------------------------------------------------------
 C
 C
 C NOx data, kg/yr per grid square, as N
-      OPEN(21,FILE=EMDIR//'nox_1998bau.dat',STATUS='OLD')
+      OPEN(21,FILE=EMDIR//'nox_2020bau.dat',STATUS='OLD')
       READ(21,*) NOXDAT
       CLOSE(21)
 C DMS DATA from oceans, tonnes/yr per grid square, as S
@@ -10466,19 +10466,19 @@ C DMS DATA from oceans, tonnes/yr per grid square, as S
       READ(22,101) DMS
       CLOSE(22)
 C SO2 DATA, kg/yr per grid square, as S
-      OPEN(22,FILE=EMDIR//'so2_2000bau.dat',STATUS='OLD')
+      OPEN(22,FILE=EMDIR//'so2_2020bau.dat',STATUS='OLD')
       READ(22,*) SO2DAT
       CLOSE(22)
 C CO  DATA, kg/yr per grid square
-      OPEN(22,FILE=EMDIR//'co_1998bau.dat',STATUS='OLD')
+      OPEN(22,FILE=EMDIR//'co_2020bau.dat',STATUS='OLD')
       READ(22,*) CODAT
       CLOSE(22)
 C CH4 DATA, kg/yr per grid square
-      OPEN(22,FILE=EMDIR//'ch4_2000bau.dat',STATUS='OLD')
+      OPEN(22,FILE=EMDIR//'ch4_2020bau.dat',STATUS='OLD')
       READ(22,*) CH4DAT
       CLOSE(22)
 C NMV DATA, kg/yr per grid square
-      OPEN(22,FILE=EMDIR//'NMV_1998bau.dat',STATUS='OLD')
+      OPEN(22,FILE=EMDIR//'NMV_2020bau.dat',STATUS='OLD')
       READ(22,*) NMVDAT
       CLOSE(22)
 C methane wetlands, tundra and paddys, tonnes/yr per grid square
@@ -10502,19 +10502,19 @@ C
         DO 20 I=1,NLONG
           I1=MOD(I+NLONG/2-1,NLONG)+1
 C NOX
-          EMISS(8,I,J)=(CLASS(1,8)/100.014)*NOXDAT(I1,J1)*1E3*NA
+          EMISS(8,I,J)=(CLASS(1,8)/108.2)*NOXDAT(I1,J1)*1E3*NA
      &        /(14.0*31536000.0)
 C EMPOA
-          EMISS(218,I,J)=(CLASS(1,218)/100.014)*NOXDAT(I1,J1)*1E3*NA
+          EMISS(218,I,J)=(CLASS(1,218)/108.2)*NOXDAT(I1,J1)*1E3*NA
      &        /(13.2*31536000.0)
 C SO2 (anthro)
-          EMISS(16,I,J)=(CLASS(1,16)/113.268)*SO2DAT(I1,J1)*1E3*NA
+          EMISS(16,I,J)=(CLASS(1,16)/111.523)*SO2DAT(I1,J1)*1E3*NA
      &       /(32.0*31536000.0)
 C CO (anthro)
-          EMISS(11,I,J)=(CLASS(1,11)/570.120)*CODAT(I1,J1)*1E3*NA
+          EMISS(11,I,J)=(CLASS(1,11)/421.3)*CODAT(I1,J1)*1E3*NA
      &       /(28.0*31536000.0)
 C CH4 as NOx (anthro) +85.0 (animals) Tg/yr
-          EMISS(21,I,J)=(CLASS(1,21)/260.304)*CH4DAT(I1,J1)*1E3*NA
+          EMISS(21,I,J)=(CLASS(1,21)/358.193)*CH4DAT(I1,J1)*1E3*NA
      &       /(16.0*31536000.0)
 C Other sources of CH4 - shifted by 180 degrees => use I instead of I1
 C Paddy 60.0 Tg/yr, Tundra 50.0 Tg/yr, Wetlands 65 Tg/yr
@@ -10524,70 +10524,70 @@ C values for the year 1999
           EMISS(21,I,J)=EMISS(21,I,J)+((WETLAN(I,J1)*220/65)+
      &      (PADDY(I,J1)*56/60))*1E6*NA/(16.0*31536000.0)
 C C2H6 (anthro)
-          EMISS(23,I,J)=(CLASS(1,23)/122.079)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(23,I,J)=(CLASS(1,23)/203.381)*NMVDAT(I1,J1)*1E3*NA
      &       /(30.0*31536000.0)
 C C3H8 (anthro)
-          EMISS(25,I,J)=(CLASS(1,25)/122.079)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(25,I,J)=(CLASS(1,25)/203.381)*NMVDAT(I1,J1)*1E3*NA
      &       /(44.0*31536000.0)
 C NC4H10 (anthro)
-          EMISS(28,I,J)=(CLASS(1,28)/122.079)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(28,I,J)=(CLASS(1,28)/203.381)*NMVDAT(I1,J1)*1E3*NA
      &       /(58.0*31536000.0)
 C CH3OH (anthro)
-          EMISS(76,I,J)=(CLASS(1,76)/122.079)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(76,I,J)=(CLASS(1,76)/203.381)*NMVDAT(I1,J1)*1E3*NA
      &       /(32.0*31536000.0)
 C CH3COCH3 (anthro)
-          EMISS(73,I,J)=(CLASS(1,73)/122.079)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(73,I,J)=(CLASS(1,73)/203.381)*NMVDAT(I1,J1)*1E3*NA
      &       /(58.0*31536000.0)
 C C2H4 (anthro)
-          EMISS(30,I,J)=(CLASS(1,30)/122.079)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(30,I,J)=(CLASS(1,30)/203.381)*NMVDAT(I1,J1)*1E3*NA
      &       /(28.0*31536000.0)
 C C3H6 (anthro)
-          EMISS(32,I,J)=(CLASS(1,32)/122.079)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(32,I,J)=(CLASS(1,32)/203.381)*NMVDAT(I1,J1)*1E3*NA
      &       /(42.0*31536000.0)
 C OXYL (anthro)
-          EMISS(67,I,J)=(CLASS(1,67)/122.079)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(67,I,J)=(CLASS(1,67)/203.381)*NMVDAT(I1,J1)*1E3*NA
      &       /(106.0*31536000.0)
 C HCHO (anthro)
-          EMISS(39,I,J)=(CLASS(1,39)/122.079)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(39,I,J)=(CLASS(1,39)/203.381)*NMVDAT(I1,J1)*1E3*NA
      &       /(30.0*31536000.0)
 C CH3CHO (anthro)
-          EMISS(42,I,J)=(CLASS(1,42)/122.079)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(42,I,J)=(CLASS(1,42)/203.381)*NMVDAT(I1,J1)*1E3*NA
      &       /(44.0*31536000.0)
 C H2 as NOx
-          EMISS(10,I,J)=(CLASS(1,10)/100.014)*NOXDAT(I1,J1)*1E3*NA
+          EMISS(10,I,J)=(CLASS(1,10)/108.2)*NOXDAT(I1,J1)*1E3*NA
      &       /(2.0*31536000.0)
 C TOLUENE (anthro) 
-          EMISS(64,I,J)=(CLASS(1,64)/122.079)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(64,I,J)=(CLASS(1,64)/203.381)*NMVDAT(I1,J1)*1E3*NA
      &       /(92.0*31536000.0)
 C C5H8 (anthro) as NOX
-          EMISS(43,I,J)=(CLASS(1,43)/100.014)*NOXDAT(I1,J1)*1E3*NA
+          EMISS(43,I,J)=(CLASS(1,43)/108.2)*NOXDAT(I1,J1)*1E3*NA
      &       /(68.0*31526000.0)
 C BENZENE (anthro)
-          EMISS(61,I,J)=(CLASS(1,61)/122.079)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(61,I,J)=(CLASS(1,61)/203.381)*NMVDAT(I1,J1)*1E3*NA
      &       /(78.0*31536000.0)
 C HCOOH (anthro)
-          EMISS(40,I,J)=(CLASS(1,40)/122.079)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(40,I,J)=(CLASS(1,40)/203.381)*NMVDAT(I1,J1)*1E3*NA
      &       /(46.0*31536000.0)
 C CH3CO2H (anthro)
-          EMISS(41,I,J)=(CLASS(1,41)/122.079)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(41,I,J)=(CLASS(1,41)/203.381)*NMVDAT(I1,J1)*1E3*NA
      &       /(60.0*31536000.0)
 C C2H5OH (anthro)
-          EMISS(77,I,J)=(CLASS(1,77)/122.079)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(77,I,J)=(CLASS(1,77)/203.381)*NMVDAT(I1,J1)*1E3*NA
      &       /(46.0*31536000.0)
 C MEK (anthro)
-          EMISS(101,I,J)=(CLASS(1,101)/122.079)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(101,I,J)=(CLASS(1,101)/203.381)*NMVDAT(I1,J1)*1E3*NA
      &       /(72.0*31536000.0)
 C C2H5CHO (anthro)
-          EMISS(71,I,J)=(CLASS(1,71)/122.079)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(71,I,J)=(CLASS(1,71)/203.381)*NMVDAT(I1,J1)*1E3*NA
      &       /(58.0*31536000.0)
 C C2H2 (anthro)
-          EMISS(59,I,J)=(CLASS(1,59)/122.079)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(59,I,J)=(CLASS(1,59)/203.381)*NMVDAT(I1,J1)*1E3*NA
      &       /(26.0*31536000.0)
 C TBUT2ENE (anthro)
-          EMISS(34,I,J)=(CLASS(1,34)/122.079)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(34,I,J)=(CLASS(1,34)/203.381)*NMVDAT(I1,J1)*1E3*NA
      &       /(56.0*31536000.0)
 C CH3BR (anthro) as NOx
-          EMISS(227,I,J)=(CLASS(1,227)/100.014)*NOXDAT(I1,J1)*1E3*NA
+          EMISS(227,I,J)=(CLASS(1,227)/108.2)*NOXDAT(I1,J1)*1E3*NA
      &       /(94.909*31536000.0)
 C NH3 (man-related)
           EMISS(228,I,J)=(CLASS(1,228)/37.1)*NH3(I1,J1)*1E12*NA
@@ -10722,37 +10722,37 @@ C     &             0., 0., 0., 0., 0., 0., 0., 0., 1., 0./
 C
 C     -------------------EMISSION CLASSES------------------------------
 C                                  Anth  ,Biomass,Veg   ,Soil  ,Oceans
-      DATA (CLASS(IC,8),IC=1,5)   /30.45,  6.77,  0.0,  5.6,  0.0 / ! NOX
-      DATA (CLASS(IC,11),IC=1,5)  /570.1,  472.0, 81.6, 0.0,  20.0/ ! CO
-      DATA (CLASS(IC,21),IC=1,5)  /220.0,  88.0,  0.0,  0.0,  15.0/ ! CH4
-      DATA (CLASS(IC,39),IC=1,5)  /1.19,   3.61,  5.0,  0.0,  0.0 / ! HCHO
-      DATA (CLASS(IC,10),IC=1,5)  /20.0,   20.0,  0.0,  5.0,  5.0 / ! H2
-      DATA (CLASS(IC,23),IC=1,5)  /5.69,   3.17,  0.0,  0.0,  0.78/ ! C2H6
-      DATA (CLASS(IC,42),IC=1,5)  /1.8,    3.58,  20.7,  0.0,  0.0 / ! CH3CHO
-      DATA (CLASS(IC,28),IC=1,5)  /53.29,  1.1,   0.0,  0.0,  0.0 / ! NC4H10
-      DATA (CLASS(IC,16),IC=1,5)  /56.6,   2.2,   0.0,  0.0,  0.0 / ! SO2
-      DATA (CLASS(IC,30),IC=1,5)  /4.15,   6.25,  26.9, 0.0,  1.19 / ! C2H4
-      DATA (CLASS(IC,32),IC=1,5)  /2.04,   1.94,  15.8, 0.0,  1.3 / ! C3H6
-      DATA (CLASS(IC,67),IC=1,5)  /4.0,    0.7,   0.0,  0.0,  0.0 / ! OXYL
-      DATA (CLASS(IC,25),IC=1,5)  /6.42,   0.55,  0.0, 0.0,  1.06/ ! C3H8
-      DATA (CLASS(IC,76),IC=1,5) /0.963,  9.2,   99.6, 0.0,  0.0 / ! CH3OH
-      DATA (CLASS(IC,73),IC=1,5)  /0.297,  1.83,  43.7, 0.0,  0.0 / ! CH3COCH3
-      DATA (CLASS(IC,43),IC=1,5)  /0.0,    0.0,   535.0, 0.0, 0.0 / ! C5H8
-      DATA (CLASS(IC,64),IC=1,5)  /5.3,    1.6,   0.0,  0.0,  0.0 / ! TOLUENE
-      DATA (CLASS(IC,47),IC=1,5)  /0.0,    0.0,  108.2, 0.0, 0.0 / ! APINENE
-      DATA (CLASS(IC,53),IC=1,5)  /0.0,    0.0,   54.1, 0.0, 0.0 / ! BPINENE
-      DATA (CLASS(IC,61),IC=1,5)  /3.1,    2.5,   0.0,   0.0,  0.0 / ! BENZENE      
-      DATA (CLASS(IC,40),IC=1,5)  /1.79,   5.47,  3.7,   0.0,  0.0 / ! HCOOH
-      DATA (CLASS(IC,41),IC=1,5)  /16.81,  3.15,  3.7,   0.0,  0.0 / ! CH3CO2H
-      DATA (CLASS(IC,77),IC=1,5)  /2.792  ,0.27,  20.7,   0.0,  0.0 / ! C2H5OH
-      DATA (CLASS(IC,101),IC=1,5) /1.117  ,4.22  ,0.0   ,0.0   ,0.0 / ! MEK
-      DATA (CLASS(IC,71),IC=1,5)  /1.56   ,0.0   ,0.0   ,0.0   ,0.0 / ! C2H5CHO
-      DATA (CLASS(IC,59),IC=1,5)  /4.04,   1.73,  0.0,   0.0,   0.0 / ! C2H2
-      DATA (CLASS(IC,34),IC=1,5)  /5.73   ,1.61  ,8.0   ,0.0   ,0.0 / ! TBUT2ENE
-      DATA (CLASS(IC,220),IC=1,5)  /0.0   ,0.0    ,0.0   ,1.0   ,15.0/ ! DMS
-      DATA (CLASS(IC,227),IC=1,5)  /0.065 ,0.02   ,0.0   ,0.0   ,0.0 / ! CH3BR
-      DATA (CLASS(IC,228),IC=1,5)  /37.1  ,5.9    ,0.0   ,2.4   ,8.2 / ! NH3
-      DATA (CLASS(IC,218),IC=1,5)  /12.3  ,52.48  ,0.0   ,0.0  ,0.0 / ! EMPOA
+      DATA (CLASS(IC,8),IC=1,5)   /74.0,  12.10,  0.0,  6.94,  0.0 / ! NOX
+      DATA (CLASS(IC,11),IC=1,5)  /540.0,  262.0, 81.6, 0.0,  20.0/ ! CO
+      DATA (CLASS(IC,21),IC=1,5)  /378.0,  10.6,  0.0,  36.78,  12.0/ ! CH4
+      DATA (CLASS(IC,39),IC=1,5)  /4.38,   4.19,  5.0,  0.03,  0.0 / ! HCHO
+      DATA (CLASS(IC,10),IC=1,5)  /14.3,   6.89,  0.0,  3.0,  6.0 / ! H2
+      DATA (CLASS(IC,23),IC=1,5)  /3.93,   2.7,  0.0,  0.0,  0.98/ ! C2H6
+      DATA (CLASS(IC,42),IC=1,5)  /2.0,    2.66,  20.7,  0.0,  34.0 / ! CH3CHO
+      DATA (CLASS(IC,28),IC=1,5)  /9.50,  0.38,   0.0,  0.0,  8.24 / ! NC4H10
+      DATA (CLASS(IC,16),IC=1,5)  /84.50,   1.84,   0.0,  0.0,  0.0 / ! SO2
+      DATA (CLASS(IC,30),IC=1,5)  /6.56,   3.29,  26.9, 0.26,  1.4 / ! C2H4
+      DATA (CLASS(IC,32),IC=1,5)  /2.77,   2.90,  15.8, 0.16,  1.52 / ! C3H6
+      DATA (CLASS(IC,67),IC=1,5)  /6.43,    0.18,   0.0,  0.0,  0.0 / ! OXYL
+      DATA (CLASS(IC,25),IC=1,5)  /5.94,   0.52,  0.0, 0.0,  1.29/ ! C3H8
+      DATA (CLASS(IC,76),IC=1,5) /7.75,  5.75,   99.6, 0.0,  24.0 / ! CH3OH
+      DATA (CLASS(IC,73),IC=1,5)  /0.78,  1.08,  43.7, 0.0,  0.0 / ! CH3COCH3
+      DATA (CLASS(IC,43),IC=1,5)  /0.13,    0.31,   535.0, 0.0, 1.90 / ! C5H8
+      DATA (CLASS(IC,64),IC=1,5)  /5.71,    1.68,   0.0,  0.1,  0.0 / ! TOLUENE
+      DATA (CLASS(IC,47),IC=1,5)  /0.16,    1.0,  108.2, 0.0, 0.0 / ! APINENE
+      DATA (CLASS(IC,53),IC=1,5)  /0.08,    0.5,   54.1, 0.0, 0.0 / ! BPINENE
+      DATA (CLASS(IC,61),IC=1,5)  /4.13,    1.11,   0.0,   0.07,  0.0 / ! BENZENE      
+      DATA (CLASS(IC,40),IC=1,5)  /2.23,   1.46,  3.70,   1.76,  0.0 / ! HCOOH
+      DATA (CLASS(IC,41),IC=1,5)  /9.67,  11.23,  3.7,   3.42,  0.0 / ! CH3CO2H
+      DATA (CLASS(IC,77),IC=1,5)  /6.00,  0.11,  20.7,   0.0,  0.0 / ! C2H5OH
+      DATA (CLASS(IC,101),IC=1,5) /1.20,  0.93  ,0.0   ,0.0   ,0.0 / ! MEK
+      DATA (CLASS(IC,71),IC=1,5)  /3.13,   0.0   ,0.0   ,0.0   ,0.0 / ! C2H5CHO
+      DATA (CLASS(IC,59),IC=1,5)  /2.80,   0.89,  0.0,   0.13,   0.0 / ! C2H2
+      DATA (CLASS(IC,34),IC=1,5)  /5.21,  0.67  ,8.0   ,0.0   ,0.0 / ! TBUT2ENE
+      DATA (CLASS(IC,220),IC=1,5)  /0.0,  0.01,  0.0,  0.0,  38.6/ ! DMS
+      DATA (CLASS(IC,227),IC=1,5)  /0.09,  0.03,  0.0,  0.0,  5.0/ ! CH3BR
+      DATA (CLASS(IC,228),IC=1,5)  /53.6,  3.3,  0.0,  36.17,  8.2/ ! NH3
+      DATA (CLASS(IC,218),IC=1,5)  /11.10,  24.0,  0.0,  0.0,  0.0/ ! EMPOA
 C      DATA (CLASS(IC,4),IC=1,5)   /21.0  ,8.0    ,0.0   ,5.6   ,0.0 / ! NOX
 C      DATA (CLASS(IC,8),IC=1,5)   /425.0 ,500.0  ,75.0  ,0.0   ,50.0/ ! CO
 C      DATA (CLASS(IC,9),IC=1,5)   /155.0 ,40.0   ,0.0   ,0.0   ,10.0/ ! CH4

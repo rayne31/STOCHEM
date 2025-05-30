@@ -19,6 +19,8 @@ updates and removed
 - Only chemicals with speciated emissions given in MEGAN have been updated (those included in VOC categories have been ignored)
 - EXCEPTION: monoterpene total emissions are summed and split 2:1, alpha:beta-pinene 
 - With these updates to vegetation emissons, our model contains ~94% of biogenic emissions predicted by MEGAN
+- all other emissions updated in line with recent literature (05/2025) and emission distribution inputs updated to 2020bau scenario. Full
+documentation of emissions found in 'All_emission_updates.xlsx'
 Kinetics - 
 - JPL 19-5 (2019- https://jpldataeval.jpl.nasa.gov/pdf/NASA-JPL%20Evaluation%2019-5.pdf) used for updates of HCHO, AONE and ACET 
 photolysis AND kinetic data for VOC + OH 

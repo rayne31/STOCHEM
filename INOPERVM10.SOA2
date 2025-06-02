@@ -14,7 +14,7 @@ C Number in a  block for CRAY vectorisation - keep this even for workstations
       PARAMETER (NBLOCK=128)
 C Number of chemicals and fluxes to store 3D statistics for.
       INTEGER NUMCHEM,NUMFLUX,NUM3DFLUX
-      PARAMETER(NUMCHEM=241,NUMFLUX=805,NUM3DFLUX=50)
+      PARAMETER(NUMCHEM=240,NUMFLUX=805,NUM3DFLUX=50)
 C Number of stations to output concentrations for 
       INTEGER NUMSTAT
       PARAMETER(NUMSTAT=40)

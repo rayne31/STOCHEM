@@ -16,7 +16,7 @@ Emissions -
 - Veg emissions taken from MEGAN 2012 (https://gmd.copernicus.org/articles/5/1471/2012/gmd-5-1471-2012.pdf)
 - Where veg emissions are not available in MEGAN, CAMS-GLOB-BIO was used to fill in the gaps. Where no speciated data for a chemical is 
 available in either database, vegetation emissions are assumed to be 0.
-- EXCEPTION: monoterpene total emissions are summed and split 2:1, alpha:beta-pinene 
+- EXCEPTION: monoterpene total emissions are summed and split 2:1, alpha:beta-pinene (from MEGAN)
 - With these updates to vegetation emissons, our model contains ~94% of biogenic emissions predicted by MEGAN
 - all other emissions updated in line with recent literature (05/2025) and emission distribution inputs updated to 2020bau scenario. Full
 documentation of emissions found in 'All_emission_updates.xlsx'

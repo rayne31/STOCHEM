@@ -10724,21 +10724,21 @@ C     -------------------EMISSION CLASSES------------------------------
 C                                  Anth  ,Biomass,Veg   ,Soil  ,Oceans
       DATA (CLASS(IC,8),IC=1,5)   /74.0,  12.10,  0.0,  6.94,  0.0 / ! NOX
       DATA (CLASS(IC,11),IC=1,5)  /540.0,  262.0, 81.6, 0.0,  20.0/ ! CO
-      DATA (CLASS(IC,21),IC=1,5)  /378.0,  10.6,  0.0,  36.78,  12.0/ ! CH4
+      DATA (CLASS(IC,21),IC=1,5)  /378.0,  10.6,  0.14,  36.78,  12.0/ ! CH4
       DATA (CLASS(IC,39),IC=1,5)  /4.38,   4.19,  5.0,  0.03,  0.0 / ! HCHO
       DATA (CLASS(IC,10),IC=1,5)  /14.3,   6.89,  0.0,  3.0,  6.0 / ! H2
-      DATA (CLASS(IC,23),IC=1,5)  /3.93,   2.7,  0.0,  0.0,  0.98/ ! C2H6
+      DATA (CLASS(IC,23),IC=1,5)  /3.93,   2.7,  0.28,  0.0,  0.98/ ! C2H6
       DATA (CLASS(IC,42),IC=1,5)  /2.0,    2.66,  20.7,  0.0,  34.0 / ! CH3CHO
-      DATA (CLASS(IC,28),IC=1,5)  /9.50,  0.38,   0.0,  0.0,  8.24 / ! NC4H10
+      DATA (CLASS(IC,28),IC=1,5)  /9.50,  0.38,   0.06,  0.0,  8.24 / ! NC4H10
       DATA (CLASS(IC,16),IC=1,5)  /84.50,   1.84,   0.0,  0.0,  0.0 / ! SO2
       DATA (CLASS(IC,30),IC=1,5)  /6.56,   3.29,  26.9, 0.26,  1.4 / ! C2H4
       DATA (CLASS(IC,32),IC=1,5)  /2.77,   2.90,  15.8, 0.16,  1.52 / ! C3H6
       DATA (CLASS(IC,67),IC=1,5)  /6.43,    0.18,   0.0,  0.0,  0.0 / ! OXYL
-      DATA (CLASS(IC,25),IC=1,5)  /5.94,   0.52,  0.0, 0.0,  1.29/ ! C3H8
+      DATA (CLASS(IC,25),IC=1,5)  /5.94,   0.52,  0.03, 0.0,  1.29/ ! C3H8
       DATA (CLASS(IC,76),IC=1,5) /7.75,  5.75,   99.6, 0.0,  24.0 / ! CH3OH
       DATA (CLASS(IC,73),IC=1,5)  /0.78,  1.08,  43.7, 0.0,  0.0 / ! CH3COCH3
       DATA (CLASS(IC,43),IC=1,5)  /0.13,    0.31,   535.0, 0.0, 1.90 / ! C5H8
-      DATA (CLASS(IC,64),IC=1,5)  /5.71,    1.68,   0.0,  0.1,  0.0 / ! TOLUENE
+      DATA (CLASS(IC,64),IC=1,5)  /5.71,    1.68,   1.24,  0.1,  0.0 / ! TOLUENE
       DATA (CLASS(IC,47),IC=1,5)  /0.16,    1.0,  108.2, 0.0, 0.0 / ! APINENE
       DATA (CLASS(IC,53),IC=1,5)  /0.08,    0.5,   54.1, 0.0, 0.0 / ! BPINENE
       DATA (CLASS(IC,61),IC=1,5)  /4.13,    1.11,   0.0,   0.07,  0.0 / ! BENZENE      
@@ -10750,7 +10750,7 @@ C                                  Anth  ,Biomass,Veg   ,Soil  ,Oceans
       DATA (CLASS(IC,59),IC=1,5)  /2.80,   0.89,  0.0,   0.13,   0.0 / ! C2H2
       DATA (CLASS(IC,34),IC=1,5)  /5.21,  0.67  ,8.0   ,0.0   ,0.0 / ! TBUT2ENE
       DATA (CLASS(IC,220),IC=1,5)  /0.0,  0.01,  0.0,  0.0,  38.6/ ! DMS
-      DATA (CLASS(IC,227),IC=1,5)  /0.09,  0.03,  0.0,  0.0,  5.0/ ! CH3BR
+      DATA (CLASS(IC,227),IC=1,5)  /0.09,  0.03,  0.06,  0.0,  5.0/ ! CH3BR
       DATA (CLASS(IC,228),IC=1,5)  /53.6,  3.3,  0.0,  36.17,  8.2/ ! NH3
       DATA (CLASS(IC,218),IC=1,5)  /11.10,  24.0,  0.0,  0.0,  0.0/ ! EMPOA
 C      DATA (CLASS(IC,4),IC=1,5)   /21.0  ,8.0    ,0.0   ,5.6   ,0.0 / ! NOX

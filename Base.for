@@ -10750,7 +10750,7 @@ C                                  Anth  ,Biomass,Veg   ,Soil  ,Oceans
       DATA (CLASS(IC,59),IC=1,5)  /2.80,   0.89,  0.0,   0.13,   0.0 / ! C2H2
       DATA (CLASS(IC,34),IC=1,5)  /5.21,  0.67  ,8.0   ,0.0   ,0.0 / ! TBUT2ENE
       DATA (CLASS(IC,220),IC=1,5)  /0.0,  0.01,  0.0,  0.0,  38.6/ ! DMS
-      DATA (CLASS(IC,227),IC=1,5)  /0.09,  0.03,  0.06,  0.0,  5.0/ ! CH3BR
+      DATA (CLASS(IC,227),IC=1,5)  /0.09,  0.03,  0.06,  0.0,  0.01/ ! CH3BR
       DATA (CLASS(IC,228),IC=1,5)  /53.6,  3.3,  0.0,  36.17,  8.2/ ! NH3
       DATA (CLASS(IC,218),IC=1,5)  /11.10,  24.0,  0.0,  0.0,  0.0/ ! EMPOA
 C      DATA (CLASS(IC,4),IC=1,5)   /21.0  ,8.0    ,0.0   ,5.6   ,0.0 / ! NOX

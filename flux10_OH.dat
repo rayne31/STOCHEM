@@ -35,6 +35,7 @@ DHCARB9->CARB7+CO+HO2+HO2               806  1
 CARB3->CO+CO+H2                         807  1
 CARB3->HCHO+CO                          808  1
 CH3CHO->CH4+CO                          809  1
+CH3COCH3->CH3O2+CH3O2+CO                810  1
 RTX24OOH->TXCARB22+HO2+OH               794  1
 RTN10OOH->RN8O2+CO+OH                   792  1
 RTN23OOH->CH3COCH3+RTN14O2+OH           790  1

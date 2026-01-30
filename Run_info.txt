@@ -26,4 +26,5 @@ photolysis AND kinetic data for VOC + OH
 - updated values found in ../Update_docs
 - photolysis values interpolated to each wavelength listed in LAMBDA DATA expression (rather than previously used method of 
 treating lambda values as midoints of 'bins' and averaging)
-- added additional photolysis route for ACET (-> CH4 + CO)
+- added additional photolysis route for ACET (-> CH4 + CO) and AONE (->CH3O2+CH3O2+CO)
+- added T dependent AXS and QY of AONE

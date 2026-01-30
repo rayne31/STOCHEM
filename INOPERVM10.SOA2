@@ -8,13 +8,13 @@ C Model grid and Met grid lengths (degrees)
      &  DLATM=180./(NMETLAT-1),DLONGM=360./NMETLONG)
 C Number of cells, no. of species, no. of met fields per day
       INTEGER NCELL,NC,NHR,NDJ,NR
-      PARAMETER(NCELL=50048,NC=241,NHR=4,NDJ=109,NR=591)
+      PARAMETER(NCELL=50048,NC=241,NHR=4,NDJ=110,NR=591)
 C Number in a  block for CRAY vectorisation - keep this even for workstations
       INTEGER NBLOCK
       PARAMETER (NBLOCK=128)
 C Number of chemicals and fluxes to store 3D statistics for.
       INTEGER NUMCHEM,NUMFLUX,NUM3DFLUX
-      PARAMETER(NUMCHEM=240,NUMFLUX=805,NUM3DFLUX=50)
+      PARAMETER(NUMCHEM=240,NUMFLUX=806,NUM3DFLUX=50)
 C Number of stations to output concentrations for 
       INTEGER NUMSTAT
       PARAMETER(NUMSTAT=40)

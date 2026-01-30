@@ -3978,6 +3978,7 @@ C          CO               Y(JB, 11)
      &+(RC(JB,587)*Y(JB,3)*Y(JB,60))
      &+(DJ(JB,107)*Y(JB,60)*2.0)+(DJ(JB,108)*Y(JB,60))
      &+(DJ(JB,109)     *Y(JB,42))
+     &+(DJ(JB,110)*Y(JB,73))
       L = DD(JB, 11)+DW(JB, 11)
      &+(RC(JB,19)     *Y(JB,3  ))                                             
       Y(JB, 11) = (YP(JB, 11)+DTS*P)/(1.0+DTS*L)
@@ -4095,6 +4096,7 @@ C          CH3O2            Y(JB, 22)
      &+(RC(JB,572)*Y(JB,240)*Y(JB,5))
      &+(RC(JB,575)*Y(JB,240)*Y(JB,9))
      &+(RC(JB,576)*Y(JB,240))+(RC(JB,584)*Y(JB,70)*Y(JB,9))	           
+     &+(DJ(JB,110)*Y(JB,73))*2      
       L = 0.0
      &+(RC(JB,292)    )       +(RC(JB,293)    )                               
      &+(RC(JB,190)    *Y(JB,5  ))+(RC(JB,244)    *Y(JB,9  ))
@@ -4824,7 +4826,8 @@ C          CH3COCH3         Y(JB, 73)
      &+(RC(JB,95)     *Y(JB,3  )*Y(JB,79 ))
      &+(RC(JB,110)    *Y(JB,26 )*Y(JB,8  ))          
       L = DD(JB,73)+DW(JB,73)
-     &+(RC(JB,88)     *Y(JB,3  ))+(DJ(JB,13)     )                               
+     &+(RC(JB,88)     *Y(JB,3  ))+(DJ(JB,13)     )       
+     &+(DJ(JB,110))                                                    
       Y(JB, 73) = (YP(JB, 73)+DTS*P)/(1.0+DTS*L)
 C
 C          RN8O2            Y(JB, 74)
@@ -7716,6 +7719,8 @@ C       CARB3=HCHO+CO
         FLUX(JB,808)=FLUX(JB,808)+DJ(JB,108)*Y(JB,60)*DTS/M(JB)
 C       CH3CHO=CH4+CO
         FLUX(JB,809)=FLUX(JB,809)+DJ(JB,109)*Y(JB,42)*DTS/M(JB)
+C        CH3COCH3 + hv = CH3O2 + CH3O2 + CO
+        FLUX(JB,810)=FLUX(JB,810)+DJ(JB,110)*Y(JB,73)*DTS/M(JB)
 C
 C      -------------------------
 C      EMISSIONS AND DEPOSITION:
@@ -10458,7 +10463,7 @@ C----------------------------------------------------------------------
 C
 C
 C NOx data, kg/yr per grid square, as N
-      OPEN(21,FILE=EMDIR//'nox_2020bau.dat',STATUS='OLD')
+      OPEN(21,FILE=EMDIR//'nox_1998bau.dat',STATUS='OLD')
       READ(21,*) NOXDAT
       CLOSE(21)
 C DMS DATA from oceans, tonnes/yr per grid square, as S
@@ -10466,19 +10471,19 @@ C DMS DATA from oceans, tonnes/yr per grid square, as S
       READ(22,101) DMS
       CLOSE(22)
 C SO2 DATA, kg/yr per grid square, as S
-      OPEN(22,FILE=EMDIR//'so2_2020bau.dat',STATUS='OLD')
+      OPEN(22,FILE=EMDIR//'so2_2000bau.dat',STATUS='OLD')
       READ(22,*) SO2DAT
       CLOSE(22)
 C CO  DATA, kg/yr per grid square
-      OPEN(22,FILE=EMDIR//'co_2020bau.dat',STATUS='OLD')
+      OPEN(22,FILE=EMDIR//'co_1998bau.dat',STATUS='OLD')
       READ(22,*) CODAT
       CLOSE(22)
 C CH4 DATA, kg/yr per grid square
-      OPEN(22,FILE=EMDIR//'ch4_2020bau.dat',STATUS='OLD')
+      OPEN(22,FILE=EMDIR//'ch4_2000bau.dat',STATUS='OLD')
       READ(22,*) CH4DAT
       CLOSE(22)
 C NMV DATA, kg/yr per grid square
-      OPEN(22,FILE=EMDIR//'NMV_2020bau.dat',STATUS='OLD')
+      OPEN(22,FILE=EMDIR//'NMV_1998bau.dat',STATUS='OLD')
       READ(22,*) NMVDAT
       CLOSE(22)
 C methane wetlands, tundra and paddys, tonnes/yr per grid square
@@ -10502,19 +10507,19 @@ C
         DO 20 I=1,NLONG
           I1=MOD(I+NLONG/2-1,NLONG)+1
 C NOX
-          EMISS(8,I,J)=(CLASS(1,8)/108.2)*NOXDAT(I1,J1)*1E3*NA
+          EMISS(8,I,J)=(CLASS(1,8)/100.014)*NOXDAT(I1,J1)*1E3*NA
      &        /(14.0*31536000.0)
 C EMPOA
-          EMISS(218,I,J)=(CLASS(1,218)/108.2)*NOXDAT(I1,J1)*1E3*NA
+          EMISS(218,I,J)=(CLASS(1,218)/100.014)*NOXDAT(I1,J1)*1E3*NA
      &        /(13.2*31536000.0)
 C SO2 (anthro)
-          EMISS(16,I,J)=(CLASS(1,16)/111.523)*SO2DAT(I1,J1)*1E3*NA
+          EMISS(16,I,J)=(CLASS(1,16)/113.268)*SO2DAT(I1,J1)*1E3*NA
      &       /(32.0*31536000.0)
 C CO (anthro)
-          EMISS(11,I,J)=(CLASS(1,11)/421.3)*CODAT(I1,J1)*1E3*NA
+          EMISS(11,I,J)=(CLASS(1,11)/570.120)*CODAT(I1,J1)*1E3*NA
      &       /(28.0*31536000.0)
 C CH4 as NOx (anthro) +85.0 (animals) Tg/yr
-          EMISS(21,I,J)=(CLASS(1,21)/358.193)*CH4DAT(I1,J1)*1E3*NA
+          EMISS(21,I,J)=(CLASS(1,21)/260.304)*CH4DAT(I1,J1)*1E3*NA
      &       /(16.0*31536000.0)
 C Other sources of CH4 - shifted by 180 degrees => use I instead of I1
 C Paddy 60.0 Tg/yr, Tundra 50.0 Tg/yr, Wetlands 65 Tg/yr
@@ -10524,70 +10529,70 @@ C values for the year 1999
           EMISS(21,I,J)=EMISS(21,I,J)+((WETLAN(I,J1)*220/65)+
      &      (PADDY(I,J1)*56/60))*1E6*NA/(16.0*31536000.0)
 C C2H6 (anthro)
-          EMISS(23,I,J)=(CLASS(1,23)/203.381)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(23,I,J)=(CLASS(1,23)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(30.0*31536000.0)
 C C3H8 (anthro)
-          EMISS(25,I,J)=(CLASS(1,25)/203.381)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(25,I,J)=(CLASS(1,25)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(44.0*31536000.0)
 C NC4H10 (anthro)
-          EMISS(28,I,J)=(CLASS(1,28)/203.381)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(28,I,J)=(CLASS(1,28)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(58.0*31536000.0)
 C CH3OH (anthro)
-          EMISS(76,I,J)=(CLASS(1,76)/203.381)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(76,I,J)=(CLASS(1,76)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(32.0*31536000.0)
 C CH3COCH3 (anthro)
-          EMISS(73,I,J)=(CLASS(1,73)/203.381)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(73,I,J)=(CLASS(1,73)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(58.0*31536000.0)
 C C2H4 (anthro)
-          EMISS(30,I,J)=(CLASS(1,30)/203.381)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(30,I,J)=(CLASS(1,30)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(28.0*31536000.0)
 C C3H6 (anthro)
-          EMISS(32,I,J)=(CLASS(1,32)/203.381)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(32,I,J)=(CLASS(1,32)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(42.0*31536000.0)
 C OXYL (anthro)
-          EMISS(67,I,J)=(CLASS(1,67)/203.381)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(67,I,J)=(CLASS(1,67)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(106.0*31536000.0)
 C HCHO (anthro)
-          EMISS(39,I,J)=(CLASS(1,39)/203.381)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(39,I,J)=(CLASS(1,39)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(30.0*31536000.0)
 C CH3CHO (anthro)
-          EMISS(42,I,J)=(CLASS(1,42)/203.381)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(42,I,J)=(CLASS(1,42)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(44.0*31536000.0)
 C H2 as NOx
-          EMISS(10,I,J)=(CLASS(1,10)/108.2)*NOXDAT(I1,J1)*1E3*NA
+          EMISS(10,I,J)=(CLASS(1,10)/100.014)*NOXDAT(I1,J1)*1E3*NA
      &       /(2.0*31536000.0)
 C TOLUENE (anthro) 
-          EMISS(64,I,J)=(CLASS(1,64)/203.381)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(64,I,J)=(CLASS(1,64)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(92.0*31536000.0)
 C C5H8 (anthro) as NOX
-          EMISS(43,I,J)=(CLASS(1,43)/108.2)*NOXDAT(I1,J1)*1E3*NA
+          EMISS(43,I,J)=(CLASS(1,43)/100.014)*NOXDAT(I1,J1)*1E3*NA
      &       /(68.0*31526000.0)
 C BENZENE (anthro)
-          EMISS(61,I,J)=(CLASS(1,61)/203.381)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(61,I,J)=(CLASS(1,61)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(78.0*31536000.0)
 C HCOOH (anthro)
-          EMISS(40,I,J)=(CLASS(1,40)/203.381)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(40,I,J)=(CLASS(1,40)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(46.0*31536000.0)
 C CH3CO2H (anthro)
-          EMISS(41,I,J)=(CLASS(1,41)/203.381)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(41,I,J)=(CLASS(1,41)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(60.0*31536000.0)
 C C2H5OH (anthro)
-          EMISS(77,I,J)=(CLASS(1,77)/203.381)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(77,I,J)=(CLASS(1,77)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(46.0*31536000.0)
 C MEK (anthro)
-          EMISS(101,I,J)=(CLASS(1,101)/203.381)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(101,I,J)=(CLASS(1,101)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(72.0*31536000.0)
 C C2H5CHO (anthro)
-          EMISS(71,I,J)=(CLASS(1,71)/203.381)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(71,I,J)=(CLASS(1,71)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(58.0*31536000.0)
 C C2H2 (anthro)
-          EMISS(59,I,J)=(CLASS(1,59)/203.381)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(59,I,J)=(CLASS(1,59)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(26.0*31536000.0)
 C TBUT2ENE (anthro)
-          EMISS(34,I,J)=(CLASS(1,34)/203.381)*NMVDAT(I1,J1)*1E3*NA
+          EMISS(34,I,J)=(CLASS(1,34)/122.079)*NMVDAT(I1,J1)*1E3*NA
      &       /(56.0*31536000.0)
 C CH3BR (anthro) as NOx
-          EMISS(227,I,J)=(CLASS(1,227)/108.2)*NOXDAT(I1,J1)*1E3*NA
+          EMISS(227,I,J)=(CLASS(1,227)/100.014)*NOXDAT(I1,J1)*1E3*NA
      &       /(94.909*31536000.0)
 C NH3 (man-related)
           EMISS(228,I,J)=(CLASS(1,228)/37.1)*NH3(I1,J1)*1E12*NA
@@ -10724,7 +10729,7 @@ C     -------------------EMISSION CLASSES------------------------------
 C                                  Anth  ,Biomass,Veg   ,Soil  ,Oceans
       DATA (CLASS(IC,8),IC=1,5)   /74.0,  12.10,  0.0,  6.94,  0.0 / ! NOX
       DATA (CLASS(IC,11),IC=1,5)  /540.0,  413.0, 81.6, 0.0,  20.0/ ! CO
-      DATA (CLASS(IC,21),IC=1,5)  /378.0,  17.50,  0.14,  36.78,  12.0/ ! CH4
+      DATA (CLASS(IC,21),IC=1,5)  /378.0,  17.50,  0.14,  0.0,  12.0/ ! CH4
       DATA (CLASS(IC,39),IC=1,5)  /4.38,   4.19,  5.0,  0.03,  0.0 / ! HCHO
       DATA (CLASS(IC,10),IC=1,5)  /14.3,   9.57,  0.0,  3.0,  6.0 / ! H2
       DATA (CLASS(IC,23),IC=1,5)  /3.93,   4.64,  0.28,  0.0,  0.98/ ! C2H6
@@ -12138,11 +12143,11 @@ C
       REAL RGC,NA
       PARAMETER(RGC=8.314,NA=6.022E23)
 C
-      REAL P(109,NLEV),BR01(NLEV)
+      REAL P(110,NLEV),BR01(NLEV)
       REAL ZENITH,YEAR,LAT,LONG,ZEN
-      DOUBLE PRECISION TIME
-      REAL NN(0:NLEV),TT(0:NLEV),ZZ(0:NLEV),TU(NLEV),
-     1     PU(NLEV),DZ(0:NLEV),O2N(0:NLEV),
+      DOUBLE PRECISION TIME, NN(0:NLEV), TU(NLEV)
+      REAL ZZ(0:NLEV),
+     1     PU(NLEV),DZ(0:NLEV),O2N(0:NLEV),TT(0:NLEV),
      2     CLOUD(0:NLEV),OZONE(0:NLEV),RI(0:NLEV),AERO(0:NLEV),
      2     CCOS(0:NLEV)
       REAL ACONC(33),ALB0SURF(NLAM),ALB1SURF(NLAM),ALBICE(NLAM),
@@ -12153,8 +12158,8 @@ C
      &     J1NO3(NLEV),J2NO3(NLEV),J1N2O5(NLEV),
      &     JHNO3(NLEV),J1HCHO(NLEV),J2HCHO(NLEV),
      &     JH2O2(NLEV),JCH3OOH(NLEV),J1ACET(NLEV),J2ACET(NLEV),
-     &     JAONE(NLEV),J1GLY(NLEV),J2GLY(NLEV),J3GLY(NLEV),
-     &     JMGLY(NLEV),JHO2NO2(NLEV),JPAN(NLEV),
+     &     JAONE(NLEV),J2AONE(NLEV),J1GLY(NLEV),J2GLY(NLEV),
+     &     J3GLY(NLEV),JMGLY(NLEV),JHO2NO2(NLEV),JPAN(NLEV),
      & JC2H5CHO(NLEV),JCH3COCH3(NLEV),JHONO(NLEV),
      & JUCARB10(NLEV),JCARB3(NLEV),JCARB6(NLEV),JCARB9(NLEV),
      & JCARB12(NLEV),JCARB15(NLEV),JUCARB12(NLEV),
@@ -12172,6 +12177,7 @@ C
      &     SGHNO3(NLAM),SGN2O5(NLAM),SGAHCHO(NLAM),
      &     SGBHCHO(NLAM),SGAH2O2(NLAM),SGBH2O2(NLAM),
      &     SGCH3OOH(NLAM),SGACET(NLAM),SGHPUCARB12(NLAM),
+     &     SGAONE298(NLAM),AAONE(NLAM),BAONE(NLAM),CAONE(NLAM),
      &     SGAONE(NLAM),SGGLY(NLAM),SGMGLY(NLAM),
      &     SGHO2NO2(NLAM),SGAHNO3(NLAM),SGTHNO3(NLAM),
      &     SGPAN(NLAM),SGAPAN(NLAM),SGTPAN(NLAM),SGHONO(NLAM),
@@ -12184,7 +12190,7 @@ C
       REAL PNO2(NLAM),P1NO3(NLAM),P2NO3(NLAM),
      &     P1N2O5(NLAM),P2HCHO(NLAM),
      &     P1HCHO(NLAM),PP2HCHO(NLAM),P1ACET(NLAM),
-     &     PP1ACET(NLAM),P2ACET(NLAM),PAONE(NLAM),
+     &     PP1ACET(NLAM),P2ACET(NLAM),
      &     P1GLY(NLAM),PMGLY(NLAM),PC2H5CHO(NLAM),PUCARB10(NLAM),
      &     PCARB9(NLAM),PIPRCHO(NLAM),P2GLY(NLAM),P3GLY(NLAM)
       REAL ATTA0(NLAM,0:NLEV),ATTA1(NLAM,0:NLEV),ATTS0(NLAM,0:NLEV),
@@ -12193,6 +12199,11 @@ C
      &     FRFD1(NLAM,0:NLEV),TRAC0(NLAM,0:NLEV),TRAC1(NLAM,0:NLEV)
       REAL FLUXTOT(NLAM,NLEV+1),FLUXDN(NLAM,6,0:NLEV+1),
      &     FLUXUP(NLAM,6,0:NLEV+1)
+C
+
+      REAL PAONE_CO(NLAM,NLEV), PAONE_CH3CO(NLAM,NLEV)
+      REAL PAONE_TOT(NLAM,NLEV)
+
 C
       REAL MMTOP,SSEC,MM,FRLAND,FROCEAN,FRICE,COSSURF,O2COL,
      &    O3COL,O3SCALE,DOBSON,N0,T0,P0,AERATT,AERSCAT,ASCAT,TDOB
@@ -12411,15 +12422,40 @@ C
      &    0.003,60*0/
 C JPL 19-5 INTERPOLATED @ 298 K
 C
-      DATA SGAONE/
-     &    7*0,0.184,0.221,0.27,0.331,
-     &    0.419,0.517,0.649,0.81,1.007,
-     &    1.258,1.543,1.879,2.259,2.682,
-     &    2.917,3.126,3.34,3.561,3.787,
-     &    4.019,4.257,4.502,4.647,4.297,
-     &    3.822,3.213,2.601,1.992,1.348,
-     &    0.837,0.455,68*0/
-C JPL 19-5 INTERPOLATED @ 298 K
+C
+      DATA SGAONE298/
+     &    0.61,0.43,0.21,0.12,0.11,0.11,
+     &    0.12,0.14,0.17,0.22,0.29,0.36,0.47,0.61,0.77,0.98,
+     &    1.24,1.53,1.88,2.27,2.70,3.15,3.62,4.08,4.46,4.78,
+     &    4.99,5.06,5.05,4.79,4.43,3.94,3.30,2.69,2.05,1.40,
+     &    0.858,0.467,0.205,0.067,0.017,0.005,0.002,0.001,62*0.0/
+C AXS at 298 K as reported in JPL 19 v 5 
+C
+      DATA AAONE/
+     *    7*0,-8.534,-1.909,1.568,5.828,
+     *    9.377,9.922,10.306,9.167,8.522,
+     *    7.985,7.167,6.577,6.159,5.753,
+     *    5.287,4.803,4.307,3.798,3.275,
+     *    2.737,2.185,1.617,0.938,0.156,
+     *    -0.958,-2.131,-3.304,-5.233,-8.899,
+     *    -8.966,-11.8,68*0/
+      DATA BAONE/
+     *    7*0,6.841,1.644,-1.091,-4.424,
+     *    -7.198,-7.635,-7.937,-7.045,-6.544,
+     *    -6.127,-5.493,-5.039,-4.725,-4.429,
+     *    -4.116,-3.793,-3.463,-3.123,-2.775,
+     *    -2.416,-2.048,-1.67,-1.215,-0.689,
+     *    0.055,0.818,1.563,2.946,5.411,
+     *    5.24,6.869,68*0/
+      DATA CAONE/
+     *    7*0,-13.509,-3.394,1.938,8.406,
+     *    13.785,14.646,15.234,13.504,12.526,
+     *    11.718,10.488,9.614,9.02,8.473,
+     *    7.938,7.394,6.836,6.263,5.675,
+     *    5.071,4.45,3.812,3.041,2.144,
+     *    0.89,-0.364,-1.549,-4.053,-8.24,
+     *    -7.592,-9.933,68*0/
+C JPL 19v5 - T dep coeffs for acetone AXS
 C
       DATA SGGLY/28*0.0,2.87,3.21,3.22,3.21,3.36,3.48,2.72,
      1    2.72,2.29,1.43,1.29,1.15,2.87,0.0,0.0,0.0,0.0,0.23,
@@ -12658,11 +12694,6 @@ C PP1ACET VALUES MODIFIED TO GENERATE 760TORR P1ACET VALUES AS IUPAC
 C (1992)
 C
 C
-      DATA PAONE/
-     &    28*0,0.602,0.527,0.45,0.377,
-     &    0.311,0.252,0.151,0.076,0.04,
-     &    0.022,0.014,67*0/
-C JPL 19 5 INTERPOLATED @ 295K
 C
       DATA P1GLY/
      &    6*0.0,0.203,0.222,0.245,0.266,0.286,0.306,0.325,0.341,0.357,
@@ -12815,7 +12846,7 @@ C
           SGBH2O2(NL)  = SGBH2O2(NL)*1.0E-20
           SGCH3OOH(NL) = SGCH3OOH(NL)*1.0E-20
           SGACET(NL)   = SGACET(NL)*1.0E-20
-          SGAONE(NL)   = SGAONE(NL)*1.0E-20
+          SGAONE298(NL)   = SGAONE298(NL)*1.0E-20
           SGGLY(NL)    = SGGLY(NL)*1.0E-20
           SGMGLY(NL)   = SGMGLY(NL)*1.0E-20
           SGHO2NO2(NL) = SGHO2NO2(NL)*1.0E-20
@@ -12897,11 +12928,15 @@ C
           CALL GETO3(P1O3,TU(J),LAMBDA)
       BR01(J) = (0.156 + 9.77D+08*EXP(-6415/TU(J))) 
 C
+          CALL CALC_ACETONE_QY(J, NLEV, NLAM, TU, NN, LAMBDA,
+     &                       PAONE_CO, PAONE_CH3CO, PAONE_TOT)
+C
           CALL GETSIG(SGO3,SGNO2,SGHNO3,SGHCHO,SGN2O5,SGH2O2,TU(J),
      &      LAMBDA,SGAO3,SGBO3,SGAHNO3,SGTHNO3,SGAHCHO,SGBHCHO,SGAH2O2,
      &      SGBH2O2,SGANO2,SGTNO2,SGPAN,SGAPAN,SGTPAN,SGCH3NO3,
      &      SGACH3NO3,SGTCH3NO3,SGC2H5NO3,SGAC2H5NO3,SGTC2H5NO3,
-     &      SGIC3H7NO3,SGAIC3H7NO3,SGTIC3H7NO3,NLAM)
+     &      SGIC3H7NO3,SGAIC3H7NO3,SGTIC3H7NO3,SGAONE,
+     &      SGAONE298,AAONE,BAONE,CAONE,NLAM)
 C
 C
           CALL TOTFLX(FLUXTOT(1,J),FLUXUP(1,1,J),FLUXDN(1,1,J),NLAM)
@@ -12923,6 +12958,7 @@ C
           J1ACET(J)=0.0
           J2ACET(J)=0.0
           JAONE(J)=0.0
+          J2AONE(J)=0.0
           J1GLY(J)=0.0
           J2GLY(J)=0.0
           J3GLY(J)=0.0
@@ -12971,7 +13007,10 @@ C
             J1ACET(J)  = J1ACET(J) + FLUXTOT(NL,J)*SGACET(NL)
      &           *(P1ACET(NL)/(1.0+(PU(J)*PP1ACET(NL))))
             J2ACET(J)  = J2ACET(J) + FLUXTOT(NL,J)*SGACET(NL)*P2ACET(NL)
-            JAONE(J)   = JAONE(J) + FLUXTOT(NL,J)*SGAONE(NL)*PAONE(NL)
+            JAONE(J)   = JAONE(J) + FLUXTOT(NL,J)*SGAONE(NL)
+     &           *PAONE_CH3CO(NL,J)
+            J2AONE(J)   = J2AONE(J) + FLUXTOT(NL,J)*SGAONE(NL)
+     &           *PAONE_CO(NL,J)
             J1GLY(J)   = J1GLY(J) + FLUXTOT(NL,J)*SGGLY(NL)*P1GLY(NL)
             J2GLY(J)   = J2GLY(J) + FLUXTOT(NL,J)*SGGLY(NL)*P2GLY(NL)
             J3GLY(J)   = J3GLY(J) + FLUXTOT(NL,J)*SGGLY(NL)*P3GLY(NL)
@@ -13109,6 +13148,7 @@ C AIS -ALREADY IN STOCHEM
           P(107,J)=J2GLY(J)		!JCARB3(J) - J<31> - AIS
           P(108,J)=J3GLY(J)		!JCARB3(J) - J<32> - AIS
           P(109,J)=J2ACET(J)		!JCH3CHO - molecular channel, added 10/03/2025
+          P(110,J)=J2AONE(J)		!JCH3COCH3 - additional route, CO forming, added 01/2026
 C
 C          P(8,J)=J1ACET(J)
 C          P(9,J)=JAONE(J)
@@ -13141,9 +13181,10 @@ C-
 C----------------------------------------------------------------------
       IMPLICIT NONE
 C----------------------------------------------------------------------
-      INTEGER NLEV
-      REAL TU(NLEV),ZZ(0:NLEV),DZ(0:NLEV),RI(0:NLEV),TT(0:NLEV),T0,
-     &    PP(0:9),P0,PU(NLEV),NN(0:NLEV),N0,ZU(9),A(9),B(9)
+           INTEGER NLEV
+      REAL ZZ(0:NLEV),DZ(0:NLEV),RI(0:NLEV),T0,TT(0:NLEV),
+     &    PP(0:9),P0,PU(NLEV),N0,ZU(9),A(9),B(9)
+      DOUBLE PRECISION NN(0:NLEV), TU(NLEV)
       INTEGER J
       REAL HZ,RGC,G,MAIR
       DATA MAIR/28.97/,RGC/8.314/,G/9.81/
@@ -13159,10 +13200,10 @@ C      Find pressures corresponding to the eta3 levels.
         PP(J)=A(J)+B(J)*P0
       ENDDO
 C
-C      Interpolate temperatures to mid layer.
-      TU(1)=(T0+TT(1))/2.0
+C      Interpolate temperatures to mid layer - use DBLE for explicit conversion
+      TU(1) = DBLE(T0 + TT(1)) / 2.0D0
       DO J=2,NLEV
-        TU(J)=(TT(J-1)+TT(J))/2.0
+        TU(J) = DBLE(TT(J-1) + TT(J)) / 2.0D0
       ENDDO
 C
 C      Find the heights corresponding to the pressure levels.
@@ -13203,7 +13244,7 @@ C      WRITE(6,*) '  T0 =   ',T0,'  P0 =   ',P0
 C      WRITE(6,*) '   PP(J)','     TT(J)','     ZZ(J)','     DZ(J)',
 C     &           '    ZU(J)','     PU(J)'
       DO 8 J = 0,NLEV
-        NN(J) = N0*(PP(J)/1000.0)*(T0/TT(J))
+        NN(J) = DBLE(N0)*(DBLE(PP(J))/1000.0D0)*(DBLE(T0)/DBLE(TT(J)))
         RI(J) = 1.0+(0.00029*(PP(J)/1000.0))
         DZ(J)=DZ(J)*1.0E+5
 C        IF(J.EQ.0) THEN
@@ -13295,7 +13336,8 @@ C----------------------------------------------------------------------
 C----------------------------------------------------------------------
       INTEGER NLEV,J,AL,AH
       REAL ZZ(0:NLEV),O3SCALE,O3(NLEV),O2N(0:NLEV),DELZ,
-     &     NN(0:NLEV),OZONE(0:NLEV),DZ(0:NLEV),TDOB,O3TOP
+     &     OZONE(0:NLEV),DZ(0:NLEV),TDOB,O3TOP
+      DOUBLE PRECISION NN(0:NLEV)
 C
 C SET THE PROFILES OF OXYGEN AND OZONE AT THE TOP OF EACH LAYER ;
 C APPROPRIATE TO AN AVERAGE OVER THE TWO NEIGHBOURING HALF-LAYERS.
@@ -13469,9 +13511,10 @@ C----------------------------------------------------------------------
 C----------------------------------------------------------------------
       INTEGER NLAM,NL
       PARAMETER (NLAM=106)
+      DOUBLE PRECISION NN
       REAL ATTA(NLAM),ATTS(NLAM),FRBK(NLAM),FRFD(NLAM)
       REAL SGO3,SGAO3(NLAM),SGBO3(NLAM),SGO2(NLAM),DZ,MM,OZONE,O2N,
-     &    AERATT,AERO,NN,RAYLEIGH(NLAM),ALBC(NLAM),TRAC(NLAM),CLOUD,
+     &    AERATT,AERO,RAYLEIGH(NLAM),ALBC(NLAM),TRAC(NLAM),CLOUD,
      &    SCAT,TT,AERSCAT
       DO 90 NL=1,NLAM
         SGO3 = SGAO3(NL)-(((SGAO3(NL)-SGBO3(NL))*
@@ -13682,15 +13725,17 @@ C
      &    LAMBDA,SGAO3,SGBO3,SGAHNO3,SGTHNO3,SGAHCHO,SGBHCHO,SGAH2O2,
      &    SGBH2O2,SGANO2,SGTNO2,SGPAN,SGAPAN,SGTPAN,SGCH3NO3,SGACH3NO3,
      &    SGTCH3NO3,SGC2H5NO3,SGAC2H5NO3,SGTC2H5NO3,SGIC3H7NO3,
-     &    SGAIC3H7NO3,SGTIC3H7NO3,NLAM)
+     &    SGAIC3H7NO3,SGTIC3H7NO3,SGAONE,SGAONE298,
+     &    AAONE,BAONE,CAONE,NLAM)
 C----------------------------------------------------------------------
 C-
 C-   Purpose and Methods :   To evaluate temperature dependence of cross
 C-                           sections.
 C-
 C-   Inputs  : TUHERE,LAMBDA,SGAO3,SGBO3,SGAHNO3,SGTHNO3,SGAHCHO,SGBHCHO,
-C-             SGAH2O2,SGBH2O2,SGANO2,SGTNO2,SGAPAN,SGTPAN,NLAM
-C-   Outputs : SGO2,SGNO2,SGHNO3,SGHCHO,SGH2O2,SGPAN
+C-             SGAH2O2,SGBH2O2,SGANO2,SGTNO2,SGAPAN,SGTPAN,SGAONE298,
+C-             AAONE,BAONE,CAONE,NLAM
+C-   Outputs : SGO2,SGNO2,SGHNO3,SGHCHO,SGH2O2,SGPAN,SGAONE
 C-   Controls:
 C-
 C-   Created   6-JUN-1994   Bill Collins
@@ -13701,14 +13746,18 @@ C----------------------------------------------------------------------
       IMPLICIT NONE
 C----------------------------------------------------------------------
       INTEGER NLAM,N,NL
+      DOUBLE PRECISION TUHERE
       REAL SGO3(NLAM),SGNO2(NLAM),SGHNO3(NLAM),SGHCHO(NLAM),
      &    SGH2O2(NLAM),SGN2O5(NLAM),SGPAN(NLAM),SGAPAN(NLAM),
      &    SGTPAN(NLAM),SGCH3NO3(NLAM),SGACH3NO3(NLAM),SGTCH3NO3(NLAM),
-     &    TUHERE,LAMBDA(NLAM),SGAO3(NLAM),SGBO3(NLAM),SGAHNO3(NLAM),
+     &    LAMBDA(NLAM),SGAO3(NLAM),SGBO3(NLAM),SGAHNO3(NLAM),
      &    SGTHNO3(NLAM),SGAHCHO(NLAM),SGBHCHO(NLAM),SGAH2O2(NLAM),
      &    SGBH2O2(NLAM),SGANO2(NLAM),SGTNO2(NLAM),IQPART,
      &    SGC2H5NO3(NLAM),SGAC2H5NO3(NLAM),SGTC2H5NO3(NLAM),
-     &    SGIC3H7NO3(NLAM),SGAIC3H7NO3(NLAM),SGTIC3H7NO3(NLAM)
+     &    SGIC3H7NO3(NLAM),SGAIC3H7NO3(NLAM),SGTIC3H7NO3(NLAM),
+     &    SGAONE(NLAM),SGAONE298(NLAM),
+     &    AAONE(NLAM),BAONE(NLAM),CAONE(NLAM)
+
 C
       DO 400 N = 31,51
         SGN2O5(N) = 1.0E-20*EXP(2.735+((4728.5-
@@ -13727,6 +13776,13 @@ C
      &                               *(293.0-TUHERE))/70.0)
         SGH2O2(NL) = (IQPART*SGAH2O2(NL))+
      &                            ((1.0-IQPART)*SGBH2O2(NL))
+C --- Temperature dependent acetone (AONE) cross section
+        SGAONE(NL) = SGAONE298(NL) *
+     &      (1.0
+     &      + (AAONE(NL)*1.0E-3)*TUHERE
+     &      + (BAONE(NL)*1.0E-5)*TUHERE*TUHERE
+     &      + (CAONE(NL)*1.0E-8)*TUHERE*TUHERE*TUHERE)
+C
   410 CONTINUE
       IF (TUHERE.LT.240) THEN
       DO 411 NL=1,NLAM
@@ -13753,6 +13809,154 @@ C
   414 CONTINUE
       ENDIF
   999 RETURN
+      END
+C==========================================================================      
+C=======================================================================
+C  SUBROUTINE: CALC_ACETONE_QY
+C
+C  PURPOSE:
+C     Computes wavelength-dependent acetone photolysis quantum yields
+C     for a single vertical model level.
+C
+C     The routine calculates:
+C        ΦCO      → PAONE_CO(N,J)
+C        ΦCH3CO   → PAONE_CH3CO(N,J)
+C        ΦTOTAL   → PAONE_TOT(N,J) = ΦCO + ΦCH3CO
+C
+C     using the parameterization of Blitz et al. with temperature
+C     and pressure dependence.
+C
+C  INPUTS:
+C     J        - Vertical level index
+C     NLEV     - Number of vertical levels
+C     NLAM     - Number of wavelength bins
+C     TU       - Temperature profile [K], dimension(NLEV)
+C     NN       - Air number density [molec cm-3], dimension(NLEV)
+C     LAMBDA   - Wavelength grid [nm], dimension(NLAM)
+C
+C  OUTPUTS:
+C     PAONE_CO(NLAM,NLEV)     - CO quantum yield
+C     PAONE_CH3CO(NLAM,NLEV) - CH3CO quantum yield
+C     PAONE_TOT(NLAM,NLEV)   - Total quantum yield
+C
+C  METHOD:
+C     • Valid for wavelengths 279–327.5 nm
+C     • Includes temperature scaling and pressure quenching
+C     • Outside the valid range, yields are set to zero
+C
+C=======================================================================
+
+      SUBROUTINE CALC_ACETONE_QY(J, NLEV, NLAM, TU, NN, LAMBDA,
+     &                          PAONE_CO, PAONE_CH3CO, PAONE_TOT)
+
+      IMPLICIT NONE
+
+      INTEGER J, NLEV, NLAM, N
+      DOUBLE PRECISION TU(NLEV), NN(0:NLEV)
+      REAL LAMBDA(NLAM)
+      REAL PAONE_CO(NLAM,NLEV)
+      REAL PAONE_CH3CO(NLAM,NLEV)
+      REAL PAONE_TOT(NLAM,NLEV)
+
+      DOUBLE PRECISION TUHERE, AIRD, TRATIO
+      REAL WL, WAVENUM
+      REAL a0, b0, D_0
+      REAL a1, b1, D_1
+      REAL a2, b2, D_2
+      REAL a3, b3, c3, D_3
+      REAL a4, b4, D_4
+
+C ==========================================================
+C Set temperature and air density for this level
+C ==========================================================
+
+      TUHERE = TU(J)
+      AIRD   = NN(J)
+      TRATIO = TUHERE / 295.0D0
+
+
+C Print diagnostic information for this level
+C      PRINT *, 'Level J=', J, ' TU(J)=', TU(J), ' K'
+C      PRINT *, 'Level J=', J, ' NN(J)=', NN(J), ' molec/cm3'
+      
+C Warning if air density is suspiciously low
+C      IF (NN(J) .LT. 1.0D10) THEN
+C         PRINT *, '*** WARNING: Very low air density at level', J
+C         PRINT *, '*** NN(J) =', NN(J), ' (typical values ~1E16-1E19)'
+C      END IF
+C ==========================================================
+C Loop over wavelengths
+C ==========================================================
+
+      DO 600 N = 1, NLAM
+
+         WL = LAMBDA(N)
+
+C Initialize to zero (outside parameterization range)
+         PAONE_CO(N,J)    = 0.0
+         PAONE_CH3CO(N,J) = 0.0
+         PAONE_TOT(N,J)   = 0.0
+
+C Check if in valid range (279–327.5 nm)
+         IF (WL .LT. 279.0D0 .OR. WL .GT. 327.5D0) GO TO 600
+
+C ==========================================================
+C ΦCO
+C ==========================================================
+
+         a0 = 3.50D-01 * (TRATIO**(-1.28D0))
+         b0 = 6.8D-02  * (TRATIO**(-2.65D0))
+
+         D_0 = (a0 / (1.0D0 - a0)) * EXP(b0 * (WL - 248.0D0))
+
+         PAONE_CO(N,J) = 1.0D0 / (1.0D0 + D_0)
+
+C ==========================================================
+C ΦCH3CO
+C ==========================================================
+
+         WAVENUM = 1.0D7 / WL
+
+C -------- Region 1: 279–302 nm --------
+         IF (WL .LE. 302.0D0) THEN
+
+            a1 = 1.60D-19 * (TRATIO**(-2.38D0))
+            b1 = 5.5D-04  * (TRATIO**(-3.19D0))
+
+            D_1 = a1 * EXP(-b1 * (WAVENUM - 3.3113D+04))
+
+            PAONE_CH3CO(N,J) = (1.0D0 - PAONE_CO(N,J))
+     &                       / (1.0D0 + (D_1*AIRD))
+
+C -------- Region 2: 302–327.5 nm --------
+         ELSE
+
+            a2 = 1.62D-17 * (TRATIO**(-10.03D0))
+            b2 = 1.79D-03 * (TRATIO**(-1.364D0))
+            D_2 = a2 * EXP(-b2 * (WAVENUM - 3.0488D+04))
+
+            a3 = 2.629D+01 * (TRATIO**(-6.59D0))
+            b3 = 5.72D-07 * (TRATIO**(-2.93D0))
+            c3 = 3.0006D+04 * (TRATIO**(-6.4D-02))
+            D_3 = a3 * EXP(-b3 * ((WAVENUM - c3)**2))
+
+            a4 = 1.67D-15 * (TRATIO**(-7.25D0))
+            b4 = 2.08D-03 * (TRATIO**(-1.16D0))
+            D_4 = a4 * EXP(-b4 * (WAVENUM - 3.0488D+04))
+
+            PAONE_CH3CO(N,J) = ((1.0D0 + D_4*AIRD + D_3) /
+     &                       ((1.0D0 + D_2*AIRD + D_3) *
+     &                        (1.0D0 + D_4*AIRD)))
+     &                       * (1.0D0 - PAONE_CO(N,J))
+
+         END IF
+
+C Total yield
+         PAONE_TOT(N,J) = PAONE_CO(N,J) + PAONE_CH3CO(N,J)
+
+  600 CONTINUE
+
+      RETURN
       END
 C#######################################################################
       SUBROUTINE TOTFLX(FLUXTOT,FLUXUP,FLUXDN,NLAM)

@@ -10509,7 +10509,7 @@ C
         J1=MNLAT+1-J
         DO 20 I=1,NLONG
           I1=MOD(I+NLONG/2-1,NLONG)+1
-C NOX
+C NO (NOx)
           EMISS(8,I,J)=(CLASS(1,8)/100.014)*NOXDAT(I1,J1)*1E3*NA
      &        /(14.0*31536000.0)
 C EMPOA
@@ -10529,6 +10529,7 @@ C Paddy 60.0 Tg/yr, Tundra 50.0 Tg/yr, Wetlands 65 Tg/yr
 C Updates by MCC ; based on Mikaloff Fletcher 2006 and Houweling 2000
 C Paddy 56.0 Tg/yr, Tundra 0.0 Tg/yr (removed), Wetlands 220 Tg/yr
 C values for the year 1999
+C CH4
           EMISS(21,I,J)=EMISS(21,I,J)+((WETLAN(I,J1)*220/65)+
      &      (PADDY(I,J1)*56/60))*1E6*NA/(16.0*31536000.0)
 C C2H6 (anthro)
@@ -10730,7 +10731,7 @@ C     &             0., 0., 0., 0., 0., 0., 0., 0., 1., 0./
 C
 C     -------------------EMISSION CLASSES------------------------------
 C                                  Anth  ,Biomass,Veg   ,Soil  ,Oceans
-      DATA (CLASS(IC,8),IC=1,5)   /74.0,  12.10,  0.0,  6.94,  0.0 / ! NOX
+      DATA (CLASS(IC,8),IC=1,5)   /74.0,  12.10,  0.0,  6.94,  0.0 / ! NO (NOx)
       DATA (CLASS(IC,11),IC=1,5)  /540.0,  413.0, 81.6, 0.0,  20.0/ ! CO
       DATA (CLASS(IC,21),IC=1,5)  /378.0,  17.50,  0.14,  0.0,  12.0/ ! CH4
       DATA (CLASS(IC,39),IC=1,5)  /4.38,   4.19,  5.0,  0.03,  0.0 / ! HCHO
@@ -11182,7 +11183,7 @@ C      SMONTH='1'  !this is a fudge to use just 1 months data  (1=1-18/11/93)
         J1=MNLAT+1-J
         DO 20 I=1,NLONG
           I1=MOD(I+NLONG/2-1,NLONG)+1
-C NOx
+C NO (NOx)
           EMISS(8,I,J)=EMISS(8,I,J)+
      &      (CLASS(2,8)*BURN(I1,J1)+
      &      CLASS(3,8)*VEG(I1,J1)+
@@ -11206,8 +11207,7 @@ C CO
      &      CLASS(3,11)*VEG(I1,J1)+
      &      CLASS(4,11)*SOIL(I1,J1)+
      &      CLASS(5,11)*OCEAN(I1,J1))*1E12*NA/(28.0*31536000.0)
-C CH4  20 Tg/yr termites (=vegetation)
-C mcc update based on Mikaloff Fletcher et. al. termites = 16 Tg/yr
+C CH4  20 Tg/yr termites (=vegetation) mcc update based on Mikaloff Fletcher et. al. termites = 16 Tg/yr
           EMISS(21,I,J)=EMISS(21,I,J)+
      &      (CLASS(2,21)*BURN(I1,J1)+
      &      (CLASS(3,21)+16.)*VEG(I1,J1)+

@@ -3352,7 +3352,7 @@ C          NO2              Y(JB,  4)
      &+(RC(JB,484)    *Y(JB,3  )*Y(JB,203))+(DJ(JB,6)      *Y(JB,5  ))                 
      &+(RC(JB,483)    *Y(JB,203))                 
      &+(RC(JB,479)    *Y(JB,202)) +(RC(JB,480) *Y(JB,3  )*Y(JB,202))          
-     &+(RC(JB,475)    *Y(JB,3  )*Y(JB,200))+(RC(JB,477)    *Y(JB,201))                 
+     &+(RC(JB,475)    *Y(JB,3  )*Y(JB,200))                 
      &+(RC(JB,473)    *Y(JB,3  )*Y(JB,198))
      &+(RC(JB,474)    *Y(JB,3  )*Y(JB,199))          
      &+(RC(JB,470)    *Y(JB,199))       +(RC(JB,472)    *Y(JB,200))                 
@@ -8695,7 +8695,7 @@ C
 C     Reaction (225) RU10O2 + NO3 = CARB6 + HCHO + HO2 + NO2                            
          RC(JB,225) = KRO2NO3*0.3         
 C
-C     Reaction (226) RU10O2 + NO3 = CARB7 + HCHO + HO2 + NO2                            
+C     Reaction (226) xRU10O2 + xNO3 = xCARB7 + xHCHO + xHO2 + xNO2                            
          RC(JB,226) = 0.0        
 C
 C     Reaction (227) NRN6O2 + NO3 = HCHO + HCHO + NO2 + NO2                             
@@ -9022,7 +9022,7 @@ C
 C     Reaction (334) RU10O2 = CARB6 + HCHO + HO2                                        
          RC(JB,334) = 1.83D-12*RO2(JB)*0.3            
 C
-C     Reaction (335) RU10O2 = CARB7 + HCHO + HO2                                        
+C     Reaction (335) xRU10O2 = xCARB7 + xHCHO + xHO2                                        
          RC(JB,335) = 0.0           
 C
 C     Reaction (336) NRN6O2 = HCHO + HCHO + NO2                                         
@@ -9445,13 +9445,13 @@ C
 C     Reaction (475) OH + PHAN = HCHO + CO + NO2                                        
          RC(JB,475) = 1.12D-12                       
 C
-C     Reaction (476) RU12O2 + NO2 = RU12PAN                                             
+C     Reaction (476) xRU12O2 + xNO2 = xRU12PAN                                             
          RC(JB,476) = 0.0             
 C
-C     Reaction (477) RU12PAN = RU12O2 + NO2                                             
+C     Reaction (477) xRU12PAN = xRU12O2 + xNO2                                             
          RC(JB,477) = 0.0                   
 C
-C     Reaction (478) RU10O2 + NO2 = MPAN                                                
+C     Reaction (478) xRU10O2 + xNO2 = xMPAN                                                
          RC(JB,478) = 0.0             
 C
 C     Reaction (479) MPAN = MACO3 + NO2                                                
@@ -9460,7 +9460,7 @@ C
 C     Reaction (480) OH + MPAN = CARB7 + CO + NO2                                       
          RC(JB,480) = 2.90D-11*0.22 
 C
-C     Reaction (481) OH + RU12PAN = UCARB10 + NO2                                       
+C     Reaction (481) xOH + xRU12PAN = xUCARB10 + xNO2  !x's added to stop checker flag                                   
          RC(JB,481) = 0.0 
 C
 C     Reaction (482) RTN26O2 + NO2 = RTN26PAN                                           

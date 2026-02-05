@@ -6271,12 +6271,14 @@ C          IEPOX            Y(JB,237)
       L = DD(JB,237)+ DW(JB,237)
      &+(RC(JB,554)*Y(JB,3))                                                     
       Y(JB,237) = (YP(JB,237)+DTS*P)/(1.0+DTS*L)
+C
 C          DHCARB9            Y(JB,238)
       P = EM(JB,238)
      &+(RC(JB,559)*Y(JB,110))                                            
       L = DD(JB,238)+ DW(JB,238)
      &+(RC(JB,560)*Y(JB,3)) +(DJ(JB,106))                                                   
       Y(JB,238) = (YP(JB,238)+DTS*P)/(1.0+DTS*L)
+C
 C          RU10AO2            Y(JB,239)
       P = EM(JB,239)
      &+(RC(JB,561)*Y(JB,46)*Y(JB,3))                                            
@@ -6285,6 +6287,7 @@ C          RU10AO2            Y(JB,239)
      &+(RC(JB,565)*Y(JB,5))+(RC(JB,566)*Y(JB,9)) 
      &+(RC(JB,567))+(RC(JB,568))                                               
       Y(JB,239) = (YP(JB,239)+DTS*P)/(1.0+DTS*L)
+C
 C          MACO3            Y(JB,240)
       P = EM(JB,240)
      &+(RC(JB,562)*Y(JB,46)*Y(JB,3)) 
@@ -6296,12 +6299,14 @@ C          MACO3            Y(JB,240)
      &+(RC(JB,575)*Y(JB,9)) +(RC(JB,576))  
      &+(RC(JB,577))                                       
       Y(JB,240) = (YP(JB,240)+DTS*P)/(1.0+DTS*L)
+C
 C          HMML            Y(JB,241)
       P = EM(JB,241)
      &+(RC(JB,578)*Y(JB,202)*Y(JB,3))                                            
       L = DD(JB,241)+ DW(JB,241)
      &+(RC(JB,579)*Y(JB,3)) +(RC(JB,580)*Y(JB,3))                                                   
       Y(JB,241) = (YP(JB,241)+DTS*P)/(1.0+DTS*L)
+C
 C      iteration loop stop
   901   CONTINUE
  1000 CONTINUE
@@ -7723,7 +7728,7 @@ C       CARB3=HCHO+CO
         FLUX(JB,808)=FLUX(JB,808)+DJ(JB,108)*Y(JB,60)*DTS/M(JB)
 C       CH3CHO=CH4+CO
         FLUX(JB,809)=FLUX(JB,809)+DJ(JB,109)*Y(JB,42)*DTS/M(JB)
-C        CH3COCH3 + hv = CH3O2 + CH3O2 + CO
+C        CH3COCH3=CH3O2+CH3O2+CO
         FLUX(JB,810)=FLUX(JB,810)+DJ(JB,110)*Y(JB,73)*DTS/M(JB)
 C
 C      -------------------------
@@ -13185,7 +13190,7 @@ C-
 C----------------------------------------------------------------------
       IMPLICIT NONE
 C----------------------------------------------------------------------
-           INTEGER NLEV
+      INTEGER NLEV
       REAL ZZ(0:NLEV),DZ(0:NLEV),RI(0:NLEV),T0,TT(0:NLEV),
      &    PP(0:9),P0,PU(NLEV),N0,ZU(9),A(9),B(9)
       DOUBLE PRECISION NN(0:NLEV), TU(NLEV)
@@ -13339,9 +13344,9 @@ C----------------------------------------------------------------------
       IMPLICIT NONE
 C----------------------------------------------------------------------
       INTEGER NLEV,J,AL,AH
+      DOUBLE PRECISION NN(0:NLEV)
       REAL ZZ(0:NLEV),O3SCALE,O3(NLEV),O2N(0:NLEV),DELZ,
      &     OZONE(0:NLEV),DZ(0:NLEV),TDOB,O3TOP
-      DOUBLE PRECISION NN(0:NLEV)
 C
 C SET THE PROFILES OF OXYGEN AND OZONE AT THE TOP OF EACH LAYER ;
 C APPROPRIATE TO AN AVERAGE OVER THE TWO NEIGHBOURING HALF-LAYERS.

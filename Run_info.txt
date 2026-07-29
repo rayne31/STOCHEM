@@ -21,7 +21,7 @@ available in either database, vegetation emissions are assumed to be 0.
 - all other emissions updated in line with recent literature (05/2025) and emission distribution inputs updated to 2020bau scenario. Full
 documentation of emissions found in 'All_emission_updates.xlsx'
 Kinetics - 
-- JPL 19-5 (2019- https://jpldataeval.jpl.nasa.gov/pdf/NASA-JPL%20Evaluation%2019-5.pdf) used for updates of HCHO, AONE and ACET 
+- JPL 20 (2026 - https://science.jpl.nasa.gov/documents/1503/NASA_Data_Evaluation_20.pdf) used for updates of HCHO, AONE and ACET 
 photolysis AND kinetic data for VOC + OH 
 - updated values found in ../Update_docs
 - photolysis values interpolated to each wavelength listed in LAMBDA DATA expression (rather than previously used method of 

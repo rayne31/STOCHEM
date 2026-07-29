@@ -8321,7 +8321,7 @@ C     Reaction (97) HCOOH + OH = HO2
          RC(JB,97) = 4.50D-13 
 C
 C     Reaction (98) CH3CO2H + OH = CH3O2                                               
-         RC(JB,98) = 3.8E-12*EXP(200/TC(JB)) 
+         RC(JB,98) = 3.15E-14*EXP(920/TC(JB)) 
 C
 C     Reaction (99) OH + CH3CL = CH3O2                                                 
          RC(JB,99) = 1.96D-12*EXP(-1200/TC(JB))   
@@ -9576,7 +9576,7 @@ C     Reaction (515) : NO3 + DMS = CH3SO + HCHO + HNO3
          RC(JB,515) = 1.9E-13*EXP(530/TC(JB))
 C
 C     Reaction (516)  : OH + DMSO =  MSIA + CH3O2
-         RC(JB,516) = 6.1D-12*exp(400/TC(JB))
+         RC(JB,516) = 6.1D-12*exp(800/TC(JB))
 C
 C     Reaction (517)  : CH3SO + O3 = CH3SO2
          RC(JB,517) = 4.0E-13
@@ -9591,7 +9591,7 @@ C     Reaction (520) : CH3SO2 + O3 = CH3SO3
          RC(JB,520) = 3.0E-13
 C
 C     Reaction (521) : CH3SO2 + NO2 = CH3SO3 + NO
-         RC(JB,521) = 2.2E-11
+         RC(JB,521) = 2.2E-12
 C
 C     Reaction (522) : CH3SO2 + O2 = CH3O2 + SO2
          RC(JB,522) = 5.0E+13*EXP(-(1.0+(8656/TC(JB))))
